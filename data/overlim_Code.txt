@@ -1,0 +1,32 @@
+/*using native JS:*/
+function overLim (limLen, targetEl) {
+    if (!limLen)
+     return;
+    var ruler = document.createElement('span'),
+     arr,
+     rx, 
+     index;
+        ruler.id = 'ruler';
+     ruler.style.visibility = 'hidden';
+     ruler.style.whiteSpace = 'nowrap';
+     targetEl.style.whiteSpace = 'nowrap';
+     document.body.appendChild(ruler);
+     ruler.innerHTML = targetEl.innerHTML;
+     arr = ruler.innerHTML.split(' ');
+     
+     for(var i = arr.length; i-- && limLen < ruler.offsetWidth; ) {
+       rx = new RegExp('\\s?' + arr[i] + '$');
+       ruler.innerHTML = ruler.innerHTML.replace(rx, '');
+       index = i;
+     }
+     
+     arr.splice(index, arr.length - index);
+     rx = new RegExp(arr[index-1] + '.*$'); 
+     ruler.innerHTML.replace(rx, '');
+     ruler.innerHTML = ruler.innerHTML + '...';
+     targetEl.innerHTML = ruler.innerHTML;
+     ruler.parentNode.removeChild(ruler);
+ }
+ /*using jQuery and CSS*/
+ $('#main h1').css({'white-space' : 'nowrap', 'overflow' : 'hidden', 'text-overflow' : 'ellipsis'});
+ 

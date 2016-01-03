@@ -1,0 +1,111 @@
+<div onclick="" style="background-color: #6690bc; border: 1px solid #6690BC; color: white; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="color: #333399;"><a href="https://www.blogger.com/null" style="font-size: 16px; font-variant: small-caps;"><span style="color: white;"> Deutsch Lektur 2:</span>
+    </a>
+    </span>
+</div>
+<div onclick="" style="background-color: #dfe8f8; border: 1px solid #6690BC; color: white; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="color: #333399;"><span style="color: #333399; font-size: 16px; font-variant: small-caps;"><a href="https://www.blogger.com/null" style="font-size: 16px; font-variant: small-caps;">Neue Worter: Blatt # 2</a></span></span></div>
+<div style="border: 1px solid #6690BC; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="color: #6690bc;"><span style="font-size: 17.33333396911621px; font-variant: small-caps; line-height: 30px;">
+
+<a href="http://www.schubert-verlag.de/aufgaben/arbeitsblaetter_a1_z/a1_arbeitsblaetter_index_z.htm">Die Siete fuer die Arbeitsblaetter</a></span></span><span style="color: #6690bc; font-size: 17px; font-variant: small-caps; line-height: 30px; text-align: center;">. 
+
+</span>
+    <br />
+<table style="border: 2px solid #DFE8F8; margin: 0 auto; width: 94%;">
+        <tbody>
+<tr>
+                <td colspan="3" style="text-align: justify;"><table border="1" style="border-collapse: collapse; border: 1px solid #fff; width: 100%;">
+                        <tbody>
+<tr>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>#</strong>
+                                </th>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>Ein Neues Wort</strong>
+                                </th>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>Uebersetsung auf Englisch</strong>
+                                </th>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle">Verwendungsbeispiel
+                                    <br />
+| Kommentare</th>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center;">1</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Das Hous</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">house</td>
+                                <td style="padding: 2px; text-align: center;">nt</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">2</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Die Antenne</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Clock</td>
+                                <td style="padding: 2px; text-align: center;">fm</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">3</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Der Schornstein</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">stack \ chimney</td>
+                                <td style="padding: 2px; text-align: center;">ms</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">4</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Das Dach</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">roof</td>
+                                <td style="padding: 2px; text-align: center;">nt</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">5</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Das Fenster&nbsp;</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">window</td>
+                                <td style="padding: 2px; text-align: center;">nt</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">6</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Der Fensterladen</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">shutters</td>
+                                <td style="padding: 2px; text-align: center;">ms</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">7</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Die&nbsp;<span style="background-color: white; color: #1c4b8b; font-family: sans-serif; font-size: 13px; line-height: 19.5px; text-align: left;">Tur</span></td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">door</td>
+                                <td style="padding: 2px; text-align: center;">&nbsp;fm</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">8</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Der&nbsp;<span style="background-color: white; color: #1c4b8b; font-family: sans-serif; font-size: 13px; line-height: 19.5px; text-align: left;">Zaun</span></td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">fence</td>
+                                <td style="padding: 2px; text-align: center;">fm</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">9</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Der Weg</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">way</td>
+                                <td style="padding: 2px; text-align: center;">ms</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">10</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Der Turm \ Der Leuchturm \ Das Minarette</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">tower \ beacon</td>
+                                <td style="padding: 2px; text-align: center;">ms</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">11</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Die&nbsp;<span style="background-color: white; color: #1c4b8b; font-family: sans-serif; font-size: 13px; line-height: 19.5px; text-align: left;">Brücke</span></td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">bridge</td>
+                                <td style="padding: 2px; text-align: center;">fm</td>
+                            </tr>
+<tr>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">12</td>
+                                <td style="border-right: 1px solid #6690BC; padding: 2px; text-align: center; vertical-align: middle;">Die Kirche</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">church</td>
+                                <td style="padding: 2px; text-align: center;">fm</td>
+                            </tr>
+</tbody>
+                    </table>
+</td>
+            </tr>
+</tbody>
+    </table>
+<div style="height: 5px; width: 100%;">
+</div>
+</div>

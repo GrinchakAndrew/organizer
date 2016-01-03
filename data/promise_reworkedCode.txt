@@ -1,0 +1,54 @@
+function Promise () {
+	this.config = {
+		
+		_thens : [],
+		
+		then : function(onResolve, onReject) {
+			this._thens.push({resolve : onResolve, reject : onReject});
+			return this;
+		},
+		
+		resolve : function(val) {
+			this.complete('resolve', val);
+		},
+		
+		reject : function(val) {
+			this.complete('reject', val);
+		},
+		
+		complete : function(which, args) {
+			 ;
+			if(which == 'resolve'){
+				this.then = function (resolve, reject) {this.resolve && this.resolve(arg); };
+			}else if(which == 'reject'){
+				this.then = function (resolve, reject) {this.reject && this.reject(arg); };
+			}
+			/*this code will account for 'once', i.e., singleton*/
+			this.resolve = this.reject = function(){
+				throw new Error('Promise already completed: NB! Singletone...'); 
+			}
+			
+			this._thens.forEach(function(i, j){
+				i[which](args);
+			});
+			/*if you need to retain the subscribers in the event pool, ignore the code below:*/
+			this._thens.splice(0, this._thens.length);
+		}
+	};
+	return this;
+}
+/*example of invocation:*/
+var p = new Promise(), 
+	promise1 = function(){
+		console.log('this is promise1 at work!');
+		console.log(arguments);
+	}, 
+	promise2 = function(){
+		console.log('this is promise2 at work!');
+		console.log(arguments);
+	};
+
+	p.config.then(function(){console.log('resolve: fn');}, function(){console.log('reject:fn');})
+			 .then(promise1).then(promise2);
+		 
+p.config.resolve('arg 4 resolve');

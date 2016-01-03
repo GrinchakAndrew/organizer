@@ -1,0 +1,280 @@
+body {
+	margin: 0;
+}
+#myDiv {
+	top: 0;
+    position: static;
+	background-color: rgb(240, 240, 240);
+	height: 25px;
+	width : 100%;
+}
+.titles-column-left {
+	font-family: "Verdana";
+}
+.details-body {
+	font-family: "Arial";
+	font-size: 12px;
+}
+.accordeon-wrapper {
+	margin: 15px;
+}
+	.columniser .columniser-text {
+		display: inline-block;
+		font-family: 'Segoe UI';
+		vertical-align: middle;
+	}
+		.columniser .columniser-text:nth-child(1){
+			width: 380px;
+			text-align: center;
+		}
+		.columniser .columniser-text:nth-child(2){
+			width: 66.875%;
+		}
+.red-lining {
+	height: 3px;
+	background-color: #C51F00;
+}
+.title {
+	background-color: #eaeaea;
+	border: 1px solid #fff;
+	color: #C51F00;
+	cursor: pointer;
+	width: 359px;
+}
+.subParent  {
+	background-color: #eaeaea;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border: 0;
+	margin:0;
+	width: 100%;
+}
+.subParent .title span[style*="font-weight: bold"] {
+	cursor: default;
+}
+.title  span {
+	vertical-align: middle;
+}
+.title:hover {
+	background-color: #eff;
+}
+.accordeon-wrapper .titles-column-left, .accordeon-wrapper  .details-body {
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+}
+.accordeon-wrapper  .details-body  {
+	font-size: 12px;
+}
+.left-right-container {
+	width: 100%;
+}
+.titles-column-left {
+	width: 25.875%;
+}
+.tabulator-ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.tabs-li {
+	display: inline-block;
+	font-family: 'Segoe UI';
+	font-size: 13px;
+	cursor: pointer;
+}
+.tabulator-div {
+	background-color: #fff;
+	border-left: 1px solid #C51F00;
+	border-top: 1px solid #C51F00;
+	border-right: 1px solid #C51F00;
+	padding: 1px 2px 0px 2px;
+}
+.tabulator-div:hover { 
+	background-color: #C51F00;
+	color: #fff;
+}
+@media only screen  and (min-width : 1224px) {
+	.tabulator-wrapper {	
+		width: 700px;
+	}
+}
+
+.columniser {
+		width: 100%;
+	}
+.header {
+		width: 100%;
+		
+}
+
+.tabulator-wrapper {	
+	overflow: hidden;
+}
+
+.scrolling-left, .scrolling-right {
+	width: 15px;
+	height: 19px;
+	display: inline-block;	
+	position: absolute;
+	
+}
+
+.scrolling-left {
+	margin-left: -2px;
+}
+
+.scrolling-right {
+	margin-left: 5px;
+}
+
+.scrolling-left .arrow-left, .scrolling .arrow-right {
+	width: 15px;
+	height: 19px;
+	display: inline-block;
+}
+
+.scrolling-left .arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right: 10px solid #C51F00;
+}
+
+.scrolling-right .arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-left: 10px solid #C51F00;
+}
+
+.details-body-entrails {
+	padding-top: 5px;
+	padding-left: 10px
+}
+.footer {
+	background-color: #ccc;
+	height: 2px;
+	display: none;
+	
+}
+
+.subParent .title:not(:first-child) span {
+	margin-left : 35px !important;
+}
+
+.details-body {
+  width: 100% !important;
+}
+
+.header {
+	background-color: #F0F0F0;
+	height: 4.5em;
+}
+
+.details-body-description {
+	font-size: 16px;
+	margin: 0 auto;
+	width : 90%;
+	
+}
+
+.header div{ 
+	color: #900000;
+	font-size: 24px;
+	text-align: center;	
+}
+
+.subparentarrowright {
+	width: 0;
+	height: 0;
+	border-top: 6px solid rgba(0, 0, 0, 0);
+	border-bottom: 6px solid rgba(0, 0, 0, 0);
+	border-left: 7px solid #C51F00;
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.subparentarrowdownward {
+	width: 0;
+	height: 0;
+	border-left: 6px solid rgba(0, 0, 0, 0);
+	border-right: 6px solid rgba(0, 0, 0, 0);
+	border-top: 10px solid #C51F00;
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.collapsible {
+	float: right;
+	font-size : 0.55em;
+	padding-top: 0.6em;
+}
+
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+		.tabulator-wrapper {	
+			width: 300px;
+	}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+		.tabulator-wrapper {
+			width: 300px;
+	}
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.details-body-description {
+		width: 360px;
+		margin: 0 auto;
+	}
+	
+	.header {
+		width: 100%;
+		background-color: #fff;
+		padding-bottom : 10px;
+	}
+	
+	.header > div {
+		font-size: 18px;
+		margin: 0 auto;
+	}
+	
+	.columniser-text:nth-child(1) {
+		position : fixed;
+		width: 360px;
+		top: 120px;
+	}
+	
+	.columniser {
+		padding-top: 50px;
+	}
+	
+	.tabs-li {
+		display : block;
+	}
+	
+	.red-lining {
+		visibility : hidden;
+		min-width: 367px;
+	}
+	
+	.subParent:nth-child(-n+1)>.title {
+		border-top: 2px solid #C51F00;
+		padding-top: 50px;
+	}
+	
+	@-ms-viewport{
+		width: device-width;
+	}
+}
+

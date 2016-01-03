@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+</head>
+<div onclick="" style="background-color: #6690bc; border: 1px solid #6690BC; color: white; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="color: #333399;"><a href="javascript:void(0)" style="font-size: 16px; font-variant: small-caps;"><span style="color: white;"> Vocabulary</span>
+    </a>
+    </span>
+</div>
+<div onclick="" style="background-color: #dfe8f8; border: 1px solid #6690BC; color: white; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="color: #333399;"><span style="color: #333399; font-size: 16px; font-variant: small-caps;"><a href="javascript:void(0)" style="font-size: 16px; font-variant: small-caps;">
+Russian Modern Slang and English Equivalents
+</a></span></span>
+</div>
+<div style="border: 1px solid #6690BC; margin-left: auto; margin-right: auto; text-align: center; width: 98%;">
+<span style="font-size: 17.33333396911621px; font-variant: small-caps; line-height: 30px;"></span>
+<a href=""></a><span style="color: #6690bc; font-size: 17px; font-variant: small-caps; line-height: 30px; text-align: center;"></span>
+    <br />
+<table style="border: 2px solid #DFE8F8; margin: 0 auto; width: 94%;">
+        <tbody>
+<tr>
+                <td colspan="3" style="text-align: justify;"><table border="1" style="border-collapse: collapse; border: 1px solid #fff; width: 100%;">
+                        <tbody>
+<tr>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>#</strong>
+                                </th>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>Русское слово</strong>
+                                </th>
+                               <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle"><strong>Английский Эквивалент</strong>
+                                </th>
+                                <th style="background-color: #6690bc; color: white; padding: 2px; text-align: center;" valign="middle">Добавочные комменты</th>
+                            </tr>
+<tr>
+                                <td rowspan="3" style="border-right: 1px solid #6690BC; padding: 2px; text-align: center;">1</td>
+                                <td rowspan="3" style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">
+									Терпила
+								</td>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Patsy</td>
+                                <td rowspan="3" style="padding: 2px; text-align: center;">no comments</td>
+</tr>
+							<tr>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">fall guy \ scape goat</td>
+                            </tr>
+							<tr>
+                                <td style="border-right-color: #6690bc; border-right-style: solid; border-right-width: 1px; padding: 2px; text-align: center;">Stooge: someone used at an advantage</td>
+                            </tr>
+</tbody>
+                    </table>
+</td>
+            </tr>
+</tbody>
+    </table>
+<div style="height: 5px; width: 100%;">
+</div>
+</div>
+</html>

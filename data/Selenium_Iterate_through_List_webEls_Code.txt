@@ -1,0 +1,46 @@
+package auto_testing1_package;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.ie.*;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+
+public class auto1 {
+
+    private static WebDriver FFdriver = null;
+    private static WebDriver ChromeFdriver = null;
+    private static List < WebElement > webEl = null;
+    private static Iterator < WebElement > itr;
+    private static WebElement parent = null;
+    private static WebElement child = null;
+
+    public static void main(String[] args) throws InterruptedException {
+
+        //FFdriver = new FirefoxDriver();
+        ChromeFdriver = new ChromeDriver();
+        ChromeFdriver.get("https://0d4d0d73486c20aee5c59ee6855cd3d9275f3bc8.googledrive.com/host/0ByTeA0PZj6sbfm5vNmhlcHZMMlY5dGt1ZTRRME5BTXRVaWJQRGlGbE91ZXdHbkZ1NUoxcjQ/");
+        Thread.sleep(3000);
+        webEl = ChromeFdriver.findElements(By.className("title"));
+        itr = webEl.iterator();
+        while (itr.hasNext()) {
+            parent = itr.next();
+            child = parent.findElement(By.tagName("span"));
+            if ("Patterns".equals(child.getText())) {
+                parent.click();
+            }
+        }
+
+        for (int i = 0; i <= webEl.size(); i = i + 1) {
+            parent = webEl.get(i);
+            child = parent.findElement(By.tagName("span"));
+            if ("Patterns".equals(child.getText())) {
+                System.out.println(webEl.get(i).getText());
+            }
+        }
+    }
+}

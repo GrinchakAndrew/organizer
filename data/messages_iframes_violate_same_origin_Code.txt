@@ -1,0 +1,80 @@
+﻿
+	/*
+		---------------------------------------------------------------------------------------
+			The following code should be invoked from the iframe window:
+		---------------------------------------------------------------------------------------
+
+	/*
+		Description of transport 'iframe-to-parent' and 'parent-to-iframe':
+		Working on the maxymiser local page in SharePoint: 
+		https://maxymiserbpos.sharepoint.com/sites/ua/training/_layouts/15/start.aspx#/SitePages/ContactUs.aspx
+		This page has an iframe of the page, privately hosted on googleDrive via https protocol.
+
+	*/
+
+	$(document).ready(function() {	
+		//$('#btn_holder a').attr('onclick') ? $('#btn_holder a').attr('onclick', null) : '';
+		/*
+			binding an onclick handler to clicks on an Element within the iframe. 
+			The handler-function will postMessage from iframe to parent window.
+			This solution will not work for iframe and parent window being on different domains, unless you use the 
+			stringified wildcard as the second parameter:
+		*/
+		$('#btn_holder a').on('click', function() {
+				window.parent.postMessage("Message from iframe to parent!", '*');
+		});
+	
+	/*
+		From within the iframe it is necessary to bind an event listener to the parent window
+		in order to receive messaging transport from Parent-to-iframe. 
+		The event is called 'message'. 
+		The 'e' parameter is capturing the event with .data and .origin attributes.
+		It is necessary to establish a secure transport by checking the e.origin parameter against the parent's 
+		window location.href.
+		Another hack is using the Function() constructor invocation with the stringified function passed to 
+		from the messages from Parent's window to the iframe. 
+		
+	*/
+		window.addEventListener("message", function(e) {
+			
+				if(e.data && e.origin == 'https://maxymiserbpos.sharepoint.com') {
+					debugger;
+					if(e.data.match(/function/)){
+						Function(e.data)();
+					}
+				}
+		}, false);
+	});
+
+	/*
+	---------------------------------------------------------------------------------------
+		The following code should be invoked from the parent's window: 
+	---------------------------------------------------------------------------------------
+	*/
+	
+	var my_iframe = document.getElementsByTagName('iframe')[0], //locating the needed iframe
+	/*
+		determining the contentWindow, 
+		which in our case will be empty, 
+		due to the violation of the same origin policy:
+	*/
+		cw = my_iframe.contentWindow; 
+	/*
+		posting the message from parent widnow to iframe as a stringified function:
+		NB! the hack of the wildcard to overcome the violation of same-origin policy:
+		
+	*/
+		cw.postMessage('(function(){alert(123)}())', '*');
+		
+	/*
+		The following events listener should be declared on the level of the parent window, 
+		to capture messages from iframe to the parent window:
+	*/	
+		
+		window.addEventListener("message", function(e) {
+				if(e.data && e.origin) { //if necessary, it is also possible to check if the e.origin is from the necessary iframe:
+					if(e.data.match(/function/)){
+						Function(e.data)();
+					}
+				}
+		}, false);

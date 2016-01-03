@@ -1,0 +1,543 @@
+<script>
+    function Config() {
+        var config = {
+            altCol: {
+				'Boston_City_Flow' : {
+                    'state': {
+                        'click': 0,
+                        'keyup': 0
+                    },
+                    '_config': null,
+                    src: "img/Boston City Flow.jpg",
+                    'width': '40%',
+                    'enlargeToWidth': 40,
+                    'left': 25
+                },  
+				
+				'Costa_Rican_Frog' : {
+                    'state': {
+                        'click': 0,
+                        'keyup': 0
+                    },
+                    '_config': null,
+                    src: "img/Costa Rican Frog.jpg",
+                    'width': '40%',
+                    'enlargeToWidth': 40,
+                    'left': 25
+                }, 
+				
+				'Pensive_Parakeet' : {
+                    'state': {
+                        'click': 0,
+                        'keyup': 0
+                    },
+                    '_config': null,
+                    src: "img/Pensive Parakeet.jpg",
+                    'width': '40%',
+                    'enlargeToWidth': 40,
+                    'left': 25
+                }
+				
+			},
+            getter: function(alt, _config, src, width, enlargeToWidth, left) {
+                if (_config && alt) {
+                    return config.altCol[alt] && config.altCol[alt]['_config'] ? config.altCol[alt]['_config'] : null;
+                } else if (!_config && alt && !src && !width && !enlargeToWidth && !left) {
+                    if (config.altCol[alt]) {
+                        return config.altCol[alt] && config.altCol[alt]['state'] ? config.altCol[alt]['state'] : null;
+                    } else {
+                        return false;
+                    }
+                } else if (!arguments.length) {
+                    return Object.keys(config.altCol);
+                } else if (alt && src) {
+                    return config.altCol[alt] && config.altCol[alt]['src'] ? config.altCol[alt]['src'] : null;
+                } else if (alt && width) {
+                    return config.altCol[alt] && config.altCol[alt]['width'] ? config.altCol[alt]['width'] : null;
+                } else if (alt && enlargeToWidth) {
+                    return config.altCol[alt] && config.altCol[alt]['enlargeToWidth'] ? config.altCol[alt]['enlargeToWidth'] : null;
+                } else if (alt && left) {
+                    return config.altCol[alt] && config.altCol[alt]['left'] ? config.altCol[alt]['left'] : null;
+                }
+            },
+
+            setter: function(alt, val, _config) {
+                if (_config && alt) {
+                    !config.altCol[alt]['_config'] ? config.altCol[alt]['_config'] = _config : '';
+                } else if (alt && val) {
+                    if (({}).toString.call(val) === '[object Object]') {
+                        for (var i in val) {
+                            config.altCol[alt]['state'][i] = val[i];
+                        }
+                    }
+                }
+            },
+
+            domReady: function(callback) {
+                config.eventsBinder(document, 'DOMContentLoaded', callback);
+                config.eventsBinder(document, 'onreadystatechange', function() {
+                    if (document.readyState === 'complete') {
+                        callback();
+                    }
+                });
+                config.eventsBinder(window, 'load', callback);
+            },
+
+            eventsBinder: function(El, event, handler) {
+                if (El && El.addEventListener) {
+                    El.addEventListener(event, handler);
+                } else if (El && El.attachEvent) {
+                    El.attachEvent('on' + event, handler);
+                }
+            },
+
+            eventsUnbinder: function(El, event, handler) {
+                if (El && El.removeEventListener) {
+                    El.removeEventListener(event, handler);
+                }
+
+                if (El && El.detachEvent) {
+                    El.detachEvent('on' + event, handler);
+                }
+            },
+
+            constructor: function(targetEl, _e, _g, s, _u) {
+                var _config = {
+                    documentCreateElement: function(El, id, style, text) {
+                        var returnable;
+                        if (El) {
+                            returnable = document.createElement(El);
+                            id ? returnable.id = id : '';
+                            if (style && ({}).toString.call(style) === '[object Array]') {
+                                for (var i = style.length; i--;) {
+                                    if (({}).toString.call(style[i]) === '[object Object]') {
+                                        for (var j in style[i]) {
+                                            returnable.style[j] = style[i][j];
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (text && ({}).toString.call(text) === '[object String]') {
+                                returnable['innerText' in returnable ? 'innerText' : 'innerHTML'] = text;
+                            }
+                        }
+                        return returnable;
+                    },
+                    appendOpacityDivToBody: function() {
+
+                        document.body.appendChild(_config.documentCreateElement('div', 'OpacityDivToBody', [{
+                            'backgroundColor': '#000'
+                        }, {
+                            'bottom': '0'
+                        }, {
+                            'left': '0'
+                        }, {
+                            'opacity': '0.5'
+                        }, {
+                            'position': 'fixed'
+                        }, {
+                            'right': '0'
+                        }, {
+                            'top': '0'
+                        }, {
+                            'zIndex': '9999'
+                        }]));
+                    },
+
+                    scroller: function(e) {
+                        var event = window.event || e,
+                            delta = event.detail ? event.detail * (-120) : event.wheelDelta,
+                            subRoutine = function(d) {
+                                var handledImageContainer = document.querySelector('#handledImageContainer');
+                                if (d >= 120 && handledImageContainer) {
+                                    handledImageContainer.style.width = parseInt(handledImageContainer.style.width.match(/\d+/)) + 1 + '%';
+                                }
+                                if (d <= -120 && handledImageContainer) {
+                                    handledImageContainer.style.width = parseInt(handledImageContainer.style.width.match(/\d+/)) - 1 + '%';
+                                }
+                            };
+                        if (delta && event.ctrlKey) {
+                            subRoutine(delta);
+                        }
+                        return false;
+                    },
+
+                    arrowPress: function(e) {
+                        var event = e || window.event,
+                            handledImageContainer = document.querySelector('#handledImageContainer'),
+                            leftDefaultValue = handledImageContainer ? _g(handledImageContainer.querySelector('img').alt, '', '', '', '', 1) : 0,
+                            imageParentNodeEnlargedWidth = handledImageContainer ? _g(handledImageContainer.querySelector('img').alt, '', '', '', 1) : 0;
+
+                        switch (event.keyCode.toString()) {
+
+                            case '38':
+                                {
+                                    handledImageContainer.style.top =
+                                        parseInt(handledImageContainer.style.top.match(/[-]?\d+/)) - 1 + '%';
+                                    break;
+                                }
+
+                            case '40':
+                                {
+                                    handledImageContainer.style.top =
+                                        parseInt(handledImageContainer.style.top.match(/[-]?\d+/)) + 1 + '%';
+                                    break;
+                                }
+                            case '37' || '':
+                                {
+                                    !handledImageContainer.style.left ||
+                                        parseInt(handledImageContainer.style.left.match(/[-]?\d+/)) > leftDefaultValue ?
+                                        handledImageContainer.style.left = leftDefaultValue + '%' : handledImageContainer.style.left;
+                                    handledImageContainer.style.left = parseInt(handledImageContainer.style.left.match(/[-]?\d+/)) - 1 + '%';
+                                    break;
+                                }
+
+                            case '39':
+                                {
+                                    !handledImageContainer.style.left ||
+                                        parseInt(handledImageContainer.style.left.match(/[-]?\d+/)) < leftDefaultValue ?
+                                        handledImageContainer.style.left = leftDefaultValue + '%' : handledImageContainer.style.left;
+                                    handledImageContainer.style.left =
+                                        parseInt(handledImageContainer.style.left.match(/[-]?\d+/)) + 1 + '%';
+                                    break;
+                                }
+                            case '48':
+                                {
+                                    if (event.ctrlKey) {
+                                        parseInt(handledImageContainer.style.width.match(/[-]?\d+/)) > imageParentNodeEnlargedWidth ||
+                                            parseInt(handledImageContainer.style.width.match(/[-]?\d+/)) < imageParentNodeEnlargedWidth ?
+                                            handledImageContainer.style.width = imageParentNodeEnlargedWidth + '%' : '';
+                                        parseInt(handledImageContainer.style.left.match(/[-]?\d+/)) !== leftDefaultValue ?
+                                            handledImageContainer.style.left = leftDefaultValue + '%' : '';
+                                    }
+                                    break;
+                                }
+                            case '187':
+                                {
+                                    if (event.ctrlKey) {
+                                        handledImageContainer.style.width = parseInt(handledImageContainer.style.width.match(/\d+/)) + 1 + '%';
+                                    }
+                                    break;
+                                }
+
+                            case '189':
+                                {
+                                    if (event.ctrlKey) {
+                                        handledImageContainer.style.width = parseInt(handledImageContainer.style.width.match(/\d+/)) - 1 + '%';
+                                    }
+                                    break;
+                                }
+                        }
+                    },
+
+                    handler: function(e) {
+                        var _e = e || event,
+                            executable,
+                            _ex = e.target,
+                            subRoutine = function(eventType) {
+
+                                var OpacityDivToBody = document.getElementById('OpacityDivToBody');
+                                if (OpacityDivToBody) {
+                                    OpacityDivToBody.parentNode.removeChild(OpacityDivToBody);
+                                }
+                                if (document.querySelector('#main') && document.querySelector('#handledImageContainer')) {
+                                    document.querySelector('#main').removeChild(document.querySelector('#handledImageContainer'));
+                                }
+
+                                _u(_ex, eventType, _config.handler);
+                                _u(document, event.type, _config.scroller);
+                                _u(window, eventType, _config.handler);
+
+                                var a = {};
+                                a[eventType.toString()] = 0;
+                                s(targetEl.alt, a);
+                            };
+
+                        if (_e.type === 'keyup' | 'onkeyup') {
+                            executable = function() {
+                                if (_e.keyCode.toString() === '27') {
+                                    subRoutine(_e.type);
+                                }
+                            };
+                        } else if (_e.type === 'click' | 'onclick') {
+                            executable = function() {
+                                subRoutine(_e.type);
+                            };
+                        }
+                        executable();
+                    },
+
+                    handleImageContainer: function() {
+                        if (targetEl) {
+                            if (!document.getElementById('handledImageContainer')) {
+
+                                var _el = _config.documentCreateElement('div', 'handledImageContainer', [{
+                                        'display': 'block'
+                                    }, {
+                                        'width': _g(targetEl.alt, '', '', '', 1) + '%'
+                                    }, {
+                                        'position': 'fixed'
+                                    }, {
+                                        'zIndex': '10001'
+                                    }, {
+                                        'top': '5%'
+                                    }, {
+                                        'background': '#FFF'
+                                    }, {
+                                        'text-align': 'center'
+                                    }, {
+                                        'left': _g(targetEl.alt, '', '', '', '', 1) + '%'
+                                    }]),
+                                    _ex = _config.documentCreateElement('div', '', [{
+                                        'background-image': "url('img/close.png')"
+                                    }, {
+                                        'position': 'absolute'
+                                    }, {
+                                        'display': 'inline-block'
+                                    }, {
+                                        'background-repeat': 'no-repeat'
+                                    }, {
+                                        'cursor': 'pointer'
+                                    }, {
+                                        'height': '45px'
+                                    }, {
+                                        'width': '40px'
+                                    }, {
+                                        'padding-left': '1%'
+                                    }, {
+                                        'background-size': '100% 100%'
+                                    }, {
+                                        'background-position-x': '-4px'
+                                    }, {
+                                        'background-position-y': '-7px'
+                                    }], ''),
+                                    imgClone,
+                                    mousewheelEvt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel";
+
+                                imgClone = targetEl.cloneNode();
+                                imgClone.style.width = '95%';
+                                imgClone.style.marginLeft = '0';
+                                imgClone.style.paddingTop = '8px';
+
+                                document.getElementById('main').appendChild(_el);
+                                _el.appendChild(imgClone);
+                                _el.appendChild(_ex);
+
+                                if (!_g(targetEl.alt)['mousewheelEvt']) {
+                                    s(targetEl.alt, {
+                                        'mousewheelEvt': 1
+                                    });
+                                    _e(document, mousewheelEvt, _config.scroller);
+                                }
+
+                                s(targetEl.alt, {
+                                    'click': 1
+                                });
+
+                                _e(_ex, 'click', function(e) {
+                                    _config.handler(e);
+                                });
+
+                                if (!_g(targetEl.alt)['keyup']) {
+                                    s(targetEl.alt, {
+                                        'keyup': 1
+                                    });
+                                    _e(window, 'keyup', function(e) {
+                                        _config.handler(e);
+                                    });
+                                }
+
+                                if (!_g(targetEl.alt)['arrowPress']) {
+                                    s(targetEl.alt, {
+                                        'arrowPress': 1
+                                    });
+                                    _e(window, 'keydown', _config.arrowPress);
+                                }
+
+                                if (!document.querySelector('#OpacityDivToBody')) {
+                                    _config.appendOpacityDivToBody();
+                                }
+                            }
+                        }
+                    },
+                    onclickHandler: function() {
+                        _config.handleImageContainer();
+                    }
+                };
+
+                return {
+                    o: _config.onclickHandler
+                }
+            }
+        };
+        return {
+            d: config.domReady,
+            e: config.eventsBinder,
+            u: config.eventsUnbinder,
+            s: config.setter,
+            g: config.getter,
+            F: config.constructor
+        }
+    };
+    var config = new Config();
+    if (config.g()[0]) {
+        config.g().forEach(function(i) {
+            var img = new Image(),
+                parent = document.querySelector('#' + i);
+            img.alt = i;
+            img.src = config.g(i, '', 1);
+            img.style.cursor = 'pointer';
+            img.style.width = config.g(i, '', '', 1);
+            parent.appendChild(img);
+        });
+
+        config.e(document, 'click', function(e) {
+            var event = e || event,
+                target = event.target || event.srcElement;
+            if ((target.tagName === 'IMG' && config.g(target.alt))) {
+                if (!config.g(target.alt, 1)) {
+                    var _config = new config.F(target, config.e, config.g, config.s, config.u);
+                    config.s(target.alt, '', _config);
+                }
+                if (config.g(target.alt, 1)) {
+                    config.g(target.alt, 1).o();
+                }
+            }
+        });
+    }
+	    config.e(document, 'click',
+        function(e) {
+            var _config = {
+                    targetAttributes: {
+                        _title: [{
+                            '': ['', '']
+                        }]
+                    }
+                },
+                event = e || event,
+                _target = event.target || event.srcElement;
+
+            _config.targetAttributes._title.forEach(function(i, j) {
+                Object.keys(i).forEach(function(_i) {
+                    if (_target.attributes['_title'] && _i === _target['attributes']['_title'].value) {
+                        var keyVal = _config['targetAttributes']['_title'][j][_i],
+							simulate_mouse_events = function(node, mouseEvent) {
+                                                        var options,
+                                                            oEvent;
+                                                        options = {
+                                                            pointerX: 0,
+                                                            pointerY: 0,
+                                                            clientX: 0,
+                                                            clientY: 0,
+                                                            button: 0,
+                                                            ctrlKey: false,
+                                                            altKey: false,
+                                                            shiftKey: false,
+                                                            metaKey: false,
+                                                            bubbles: true,
+                                                            cancelable: true
+                                                        };
+                                                        if (document.createEvent) {
+                                                            oEvent = document.createEvent('MouseEvents');
+                                                            oEvent.initMouseEvent(mouseEvent, options.bubbles, options.cancelable, document.defaultView, options.button, options.pointerX, options.pointerY, options.pointerX, options.pointerY, options.ctrlKey, options.altKey, options.shiftKey, options.metaKey, options.button, node);
+                                                            node.dispatchEvent(oEvent);
+                                                        } else {
+                                                            var msEvent = document.createEventObject();
+                                                            for (var eventPropName in options) {
+                                                                msEvent[eventPropName] = options[eventPropName];
+                                                            }
+                                                            node.fireEvent('on' + mouseEvent, msEvent);
+                                                        }
+                                                    };
+                        if (typeof keyVal === 'string') {
+                            Array.prototype.forEach.call(document.querySelectorAll('.tabs-li'),
+                                function(q) {
+                                    var span = q.querySelector('span'),
+                                        spanText = span['innerText' in span ? 'innerText' : 'innerHTML'];
+                                    if (spanText === keyVal) {
+										simulate_mouse_events(q, 'click');
+                                    }
+                                });
+                        } else if (({}).toString.call(keyVal) === '[object Array]') {
+                            var titleCol = document.querySelectorAll('.title');
+                            Array.prototype.forEach.call(titleCol, function(i, j) {
+                                if (i['innerText' in i ? 'innerText' : 'innerHTML'] === keyVal[0] ||
+                                    i['innerText' in i ? 'innerText' : 'innerHTML'].match(keyVal[0])
+                                ) {
+                                    simulate_mouse_events(i, 'click');
+                                    setTimeout(function() {
+                                        Array.prototype.forEach.call(document.querySelectorAll('.tabs-li'),
+                                            function(y) {
+                                                var span = y.querySelector('span'),
+                                                    spanText = span['innerText' in span ? 'innerText' : 'innerHTML'];
+                                                if (spanText === keyVal[1]) {
+													simulate_mouse_events(y, 'click');
+													$('.details-body-pre').trigger('simulatedClick');
+                                                    return;
+                                                }
+                                            }
+                                        );
+									/*fixing the red-line out of whack situation: when clicking on the anchor with the upper bar popping up askew with the markup
+									if($('#myDiv').length) {
+												var redLiningMarginLeft = $('.red-lining').css('margin-left').match(/^205/);
+												if(redLiningMarginLeft && $('#myDiv').children().length){
+													$('.red-lining').css('margin-left', '440px');
+													console.log(redLiningMarginLeft, 'redLiningMarginLeft');
+												}
+											}
+									*/
+										
+									}, 500);
+                                }
+                            })
+                        }
+                    }
+                })
+            });
+        }
+    );
+</script>
+<div id="main" style="font-size: 10pt; font-family: arial, helvetica, sans-serif;">
+    <div style="margin-left: auto; margin-right: auto; border: 1px solid white; width: 98%;">
+        <table style="width: 100%; border: 2px; margin-left: auto; margin-right: auto; font-size: 16px;">
+            <tbody>
+                <tr>
+                    <th valign="middle" style="height: 2em; font-weight: bold; border: 1px solid white; text-align: center; color:#900000; padding: 1px; vertical-align: middle;">Pictures</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-left: auto; margin-right: auto; height: 2em; font-size: 16px; color: #333399; width: 98%; text-align: center;">
+        <div style="margin-top: 0.5em;">aGri: repo</div>
+    </div>
+<div style="margin-left: auto; margin-right: auto; border: 1px solid #6690bc; width: 98%; text-align: center;">
+	<div style="margin-left: auto; margin-right: auto; padding: 0.5em; font-size: 16px; color: #333399; width: 98%; text-align: center;">
+        <div style="">aGri: repo</div>
+    </div>
+        <div style="margin-left: auto; margin-right: auto; width: 98%;">
+        <table style="margin: 0 auto; width: 94%;">
+            <tbody>
+                <tr>
+                    <td colspan="3" style="width: 28px; text-align: left; padding-left: 30px;">
+						<ul style="list-style-type: none;">
+							<li style="list-style-type: none; line-height: 1.5em; color: #000000; font-size: 10pt;">
+								<p id="Boston_City_Flow"></p>
+							</li>
+							<li style="list-style-type: none; line-height: 1.5em; color: #000000; font-size: 10pt;">
+								<p id="Costa_Rican_Frog"></p>
+							</li>
+							<li style="list-style-type: none; line-height: 1.5em; color: #000000; font-size: 10pt;">
+								<p id="Pensive_Parakeet"></p>
+							</li>
+							<li style="list-style-type: none; line-height: 1.5em; color: #000000; font-size: 10pt;">
+								<a href="javascript:void(0)" _title=""></a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+    </tbody>
+    </table>
+    <p></p>
+	</div>
+</div>
