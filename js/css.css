@@ -105,7 +105,6 @@ body {
 	}
 .header {
 		width: 100%;
-		
 }
 
 .tabulator-wrapper {	
@@ -177,7 +176,7 @@ body {
 .details-body-description {
 	font-size: 16px;
 	margin: 0 auto;
-	width : 90%;
+	width : 100%;
 	
 }
 
@@ -234,7 +233,7 @@ body {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.details-body-description {
-		width: 360px;
+		width: 100%;
 		margin: 0 auto;
 	}
 	
