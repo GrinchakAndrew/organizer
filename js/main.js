@@ -1334,6 +1334,12 @@ $('document').ready(function () {
             }
         }); //.title').on event name ending (!) 
     });
+	$(window).on('resize', function() {
+        if ($('.title').has('#clickableTitleArrow').length) {
+            $('.title').has('#clickableTitleArrow').click();
+        }
+		$('.red-lining').before($('.blue-lining'));
+    });	
  url = 'data/tasks.js';
     POST(url);
 });
