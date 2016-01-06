@@ -5,6 +5,7 @@
 				timeout = setTimeout(function(){
 					$('.series').first().click();
 					clearTimeout(timeout);
+					$('.blue-lining').css('display', 'initial');
 				}, 700);
 		});
 	
