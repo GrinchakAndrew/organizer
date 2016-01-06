@@ -103,9 +103,11 @@ body {
 .columniser {
 		width: 100%;
 	}
+/*
 .header {
 		width: 100%;
 }
+*/
 
 .tabulator-wrapper {	
 	overflow: hidden;
