@@ -35,6 +35,14 @@ body {
 	background-color: #C51F00;
 	margin-left : 1px;
 }
+.blue-lining {
+    height: 3px;
+    background-color: #6690BC;
+    width: 48px;
+    float: left;
+    margin-left: 10px;
+}
+
 .title {
 	background-color: #eaeaea;
 	border: 1px solid #fff;

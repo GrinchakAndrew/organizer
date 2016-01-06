@@ -180,6 +180,9 @@ Accordeon.prototype.build = function (taskNames) {
             redLining: $('<div>', {
                 class: 'red-lining'
             }),
+			blueLining : $('<div>', {
+                class: 'blue-lining'
+            }),
             titlesColumnLeft: !$('.titles-column-left').length ? $('<div>', {
                 class: 'titles-column-left'
             }) : $('.titles-column-left'),
@@ -490,7 +493,8 @@ Accordeon.prototype.build = function (taskNames) {
                 that.wrapper.append(this.columniser);
                 $('.columniser').append(this.columniserText.text('Entries'));
                 $('.columniser').append(this.columniserText.clone().text(''));
-                that.wrapper.append(this.redLining);
+                that.wrapper.append(this.blueLining);
+				that.wrapper.append(this.redLining);
                 that.wrapper.append(this.leftRightContainer);
                 $('.left-right-container').append(this.titlesColumnLeft);
                 $('.left-right-container').append(this.detailsBody);
@@ -1273,7 +1277,7 @@ $('document').ready(function () {
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
 					console.log('click on the .title');
-					$('.red-lining').css({'margin-left' : '59px' /*, 'width' : (window.innerWidth - 205)*/});
+					$('.red-lining').css({'margin-left' : '58px'});
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
 						if ('ontouchstart' in document) {
 							$('.scrolling-left').css({'left' : '202px'});
@@ -1295,6 +1299,7 @@ $('document').ready(function () {
 					$($('.columniser-text')[1]).remove();
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
 					$('.red-lining').css({'margin-left' : '1px'});
+					$('.blue-lining').css({'display' : 'none'});
 					$('.scrolling-left').css({'left' : '392px'});
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
