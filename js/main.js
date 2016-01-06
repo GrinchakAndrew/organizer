@@ -1339,7 +1339,7 @@ $('document').ready(function () {
             $('.title').has('#clickableTitleArrow').click();
         }
 		$('.red-lining').before($('.blue-lining'));
-		$('.blue-lining').css('display', '');
+		$('.blue-lining').css('display', 'initial');
     });	
  url = 'data/tasks.js';
     POST(url);
