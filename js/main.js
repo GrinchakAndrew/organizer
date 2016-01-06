@@ -1263,7 +1263,6 @@ $('document').ready(function () {
 				
 				
 				if(document.documentElement.clientWidth < 400) { 
-					
 					$('.tabs-li .tabulator-div').each(function(){
 						$(this).css({'display' : '', 'width' : document.documentElement.clientWidth});
 					});
@@ -1273,7 +1272,7 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					//$('.red-lining').css({'margin-left' : '205px' /*, 'width' : (window.innerWidth - 205)*/});
+					$('.red-lining').css({'margin-left' : '1px' /*, 'width' : (window.innerWidth - 205)*/});
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
 						if ('ontouchstart' in document) {
 							$('.scrolling-left').css({'left' : '202px'});
