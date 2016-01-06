@@ -33,15 +33,7 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
-	margin-left : 1px;
-}
-.blue-lining {
-    height: 3px;
-    background-color: #6690BC;
-    width: 4.1%;
-    float: left;
-    margin-left: 10px;
-	display: none;
+	margin-left : 10px;
 }
 
 .title {
