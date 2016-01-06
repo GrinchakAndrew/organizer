@@ -1196,6 +1196,8 @@ $('document').ready(function () {
 			accordeon.scroller();
         $('.title').on(eventName, function (e) {
             'use strict';
+			$('.red-lining').before($('.blue-lining'));
+			$('.blue-lining').css('display', '');
             tabsNames = [];
             $('body').trigger('title-change');
 			$('.details-body-code') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] ? $('.details-body-code') [0]['innerText' in $('.details-body-entrails') [0] ? 'innerText' : 'innerHTML'] = '' : null;
