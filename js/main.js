@@ -45,10 +45,13 @@ Accordeon.prototype.scroller = function () {
       $('#myDiv').append(config.columniser);
       $('#myDiv').append(config.redLining);
 	  /*the fix is added to rectify the width of the config.redLining to suite 100% upon appending and hoisting:*/
+	  /*
 	  config.redLining.css({
         'margin': '',
         'margin-left': '205px'
       });
+	  */
+	  
     },
     calibrate: function () {
       $('.tabs-li').each(function () {
@@ -66,10 +69,12 @@ Accordeon.prototype.scroller = function () {
       $('.left-right-container').before(config.columniser);
       $('.left-right-container').before(config.redLining);
       config.columniser.css('margin', '');
-      config.redLining.css({
+      /*
+	  config.redLining.css({
         'margin': '',
         'margin-left': '205px'
       });
+	  */	  
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
 	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
 	  $('#myDiv').css({
@@ -1268,7 +1273,7 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css({'margin-left' : '205px' /*, 'width' : (window.innerWidth - 205)*/});
+					//$('.red-lining').css({'margin-left' : '205px' /*, 'width' : (window.innerWidth - 205)*/});
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
 						if ('ontouchstart' in document) {
 							$('.scrolling-left').css({'left' : '202px'});
@@ -1289,7 +1294,7 @@ $('document').ready(function () {
 					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
-					$('.red-lining').css({'margin-left' : ''});
+					//$('.red-lining').css({'margin-left' : ''});
 					$('.scrolling-left').css({'left' : '392px'});
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
