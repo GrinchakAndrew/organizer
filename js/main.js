@@ -1198,6 +1198,7 @@ $('document').ready(function () {
             'use strict';
 			$('.red-lining').before($('.blue-lining'));
 			$('.blue-lining').css('display', 'initial');
+			console.log("$('.blue-lining').css('display', 'initial');");
             tabsNames = [];
             $('body').trigger('title-change');
 			$('.details-body-code') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] ? $('.details-body-code') [0]['innerText' in $('.details-body-entrails') [0] ? 'innerText' : 'innerHTML'] = '' : null;
@@ -1335,11 +1336,11 @@ $('document').ready(function () {
         }); //.title').on event name ending (!) 
     });
 	$(window).on('resize', function() {
+		$('.red-lining').before($('.blue-lining'));
         if ($('.title').has('#clickableTitleArrow').length) {
             $('.title').has('#clickableTitleArrow').click();
+			$('.blue-lining').css('display', 'initial');
         }
-		$('.red-lining').before($('.blue-lining'));
-		$('.blue-lining').css('display', 'initial');
     });	
  url = 'data/tasks.js';
     POST(url);
