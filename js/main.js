@@ -1279,7 +1279,7 @@ $('document').ready(function () {
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
 					console.log('click on the .title');
-					$('.red-lining').css({'margin-left' : '58px'});
+					$('.red-lining').css({'margin-left' : '4%'});
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
 						if ('ontouchstart' in document) {
 							$('.scrolling-left').css({'left' : '202px'});
