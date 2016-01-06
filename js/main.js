@@ -1340,6 +1340,7 @@ $('document').ready(function () {
         if ($('.title').has('#clickableTitleArrow').length) {
             $('.title').has('#clickableTitleArrow').click();
 			$('.blue-lining').css('display', 'initial');
+			console.log("$('.blue-lining').css('display', 'initial'); from $(window).on('resize', function() {" );
         }
     });	
  url = 'data/tasks.js';
