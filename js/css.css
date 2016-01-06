@@ -19,7 +19,7 @@ body {
 	margin: 15px;
 }
 	.columniser .columniser-text {
-		display: inline-block;
+		/*display: inline-block;*/
 		font-family: 'Segoe UI';
 		vertical-align: middle;
 	}
