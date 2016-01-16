@@ -45,7 +45,8 @@
 	"English" : [
 		{"Thesaurus:" : [
 							{"Russian Slang into English" : [
-									{"Criminal Vocabulary" : {"Thesaurus: Criminal Vocabulary, Russian" : "data/induction_thesaurus_vocabulary_criminal.txt"}}
+									{"Criminal Vocabulary" : {"Thesaurus: Criminal Vocabulary, Russian" : "data/induction_thesaurus_vocabulary_criminal.txt", "Thesaurus: Criminal Vocabulary, Russian_123" : "data/induction_thesaurus_vocabulary_criminal.txt", "Thesaurus: Criminal Vocabulary, Russian_777" : "data/induction_thesaurus_vocabulary_criminal.txt"}
+									}
 								]
 							}
 				]
