@@ -1292,7 +1292,7 @@ $('document').ready(function () {
 					/*-----------------------*/
 					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
-					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
+					//$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
 					$('.red-lining').css({'margin-left' : '1px'});
 					$('.scrolling-left').css({'left' : '392px'});
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
