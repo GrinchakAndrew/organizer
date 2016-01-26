@@ -45,10 +45,13 @@ Accordeon.prototype.scroller = function () {
       $('#myDiv').append(config.columniser);
       $('#myDiv').append(config.redLining);
 	  /*the fix is added to rectify the width of the config.redLining to suite 100% upon appending and hoisting:*/
+	  /*
 	  config.redLining.css({
         'margin': '',
         'margin-left': '205px'
       });
+	  */
+	  
     },
     calibrate: function () {
       $('.tabs-li').each(function () {
@@ -66,10 +69,12 @@ Accordeon.prototype.scroller = function () {
       $('.left-right-container').before(config.columniser);
       $('.left-right-container').before(config.redLining);
       config.columniser.css('margin', '');
-      config.redLining.css({
+      /*
+	  config.redLining.css({
         'margin': '',
         'margin-left': '205px'
       });
+	  */	  
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
 	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
 	  $('#myDiv').css({
@@ -485,7 +490,7 @@ Accordeon.prototype.build = function (taskNames) {
                 that.wrapper.append(this.columniser);
                 $('.columniser').append(this.columniserText.text('Entries'));
                 $('.columniser').append(this.columniserText.clone().text(''));
-                that.wrapper.append(this.redLining);
+				that.wrapper.append(this.redLining);
                 that.wrapper.append(this.leftRightContainer);
                 $('.left-right-container').append(this.titlesColumnLeft);
                 $('.left-right-container').append(this.detailsBody);
@@ -580,7 +585,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             },
             scrollingArrows: function () {
                 if (!$('.scrolling-right').length) {
-                    $('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+                    //$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+					$('.tabulator-ul').append(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
                     $('.columniser-text').eq(0).after(this.scrollingLeft.css('z-index', 1000));
@@ -1253,12 +1259,10 @@ $('document').ready(function () {
 				$('.columniser-text').first().append($('<div></div>', {'style' : 'float: left;', 'class' : 'breadcrumb'}).
 				append($('<div></div>', {'style' : "background-color : #6690BC; padding-top: 1px; padding-bottom: 1px; height: 17px; border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7; border-right: 1px solid #C7C7C7; padding-left: 5px; padding-right: 5px;font-family: 'Segoe UI'; font-size: 13px; cursor: pointer; color: #fff; float: left;", 'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));
 				$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/^(.*)<div/)[1], ''));
-				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; display: inline-block; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
+				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
 				$('.titles-column-left').css('display', 'none');
-				
-				
+								
 				if(document.documentElement.clientWidth < 400) { 
-					
 					$('.tabs-li .tabulator-div').each(function(){
 						$(this).css({'display' : '', 'width' : document.documentElement.clientWidth});
 					});
@@ -1268,12 +1272,11 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css({'margin-left' : '205px' /*, 'width' : (window.innerWidth - 205)*/});
-					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
+					$('.red-lining').css({'margin-left' : '58px'});
 						if ('ontouchstart' in document) {
-							$('.scrolling-left').css({'left' : '202px'});
+							//$('.scrolling-left').css({'left' : '202px'});
 						}else {
-							$('.scrolling-left').css({'left' : '210px'});
+							//$('.scrolling-left').css({'left' : '210px'});
 						}
 						$('.scrolling-right').css({'left' : ''});
 				}
@@ -1288,8 +1291,7 @@ $('document').ready(function () {
 					/*-----------------------*/
 					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
-					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
-					$('.red-lining').css({'margin-left' : ''});
+					$('.red-lining').css({'margin-left' : '1px'});
 					$('.scrolling-left').css({'left' : '392px'});
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
@@ -1322,6 +1324,7 @@ $('document').ready(function () {
             }
         }); //.title').on event name ending (!) 
     });
+	
  url = 'data/tasks.js';
     POST(url);
 });
