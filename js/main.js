@@ -45,10 +45,10 @@ Accordeon.prototype.scroller = function () {
       $('#myDiv').append(config.columniser);
       $('#myDiv').append(config.redLining);
 	  /*the fix is added to rectify the width of the config.redLining to suite 100% upon appending and hoisting:*/
-	  config.redLining.css({
+	  /* config.redLining.css({
         'margin': '',
         'margin-left': '205px'
-      });
+      }); */
     },
     calibrate: function () {
       $('.tabs-li').each(function () {
@@ -67,8 +67,8 @@ Accordeon.prototype.scroller = function () {
       $('.left-right-container').before(config.redLining);
       config.columniser.css('margin', '');
       config.redLining.css({
-        'margin': '',
-        'margin-left': '205px'
+        'margin': ''/* ,
+        'margin-left': '205px' */
       });
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
 	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
@@ -580,7 +580,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             },
             scrollingArrows: function () {
                 if (!$('.scrolling-right').length) {
-                    $('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+                    //$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+					$('.tabulator-ul').append(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
                     $('.columniser-text').eq(0).after(this.scrollingLeft.css('z-index', 1000));
@@ -1268,12 +1269,12 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css({'margin-left' : '205px' /*, 'width' : (window.innerWidth - 205)*/});
-					$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
+					$('.red-lining').css(/* {'margin-left' : '205px'  *//*, 'width' : (window.innerWidth - 205)*/});
+					/* $('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'}); */
 						if ('ontouchstart' in document) {
-							$('.scrolling-left').css({'left' : '202px'});
+							//$('.scrolling-left').css({'left' : '202px'});
 						}else {
-							$('.scrolling-left').css({'left' : '210px'});
+							//$('.scrolling-left').css({'left' : '210px'});
 						}
 						$('.scrolling-right').css({'left' : ''});
 				}

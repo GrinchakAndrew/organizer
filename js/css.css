@@ -19,13 +19,15 @@ body {
 	margin: 15px;
 }
 	.columniser .columniser-text {
-		display: inline-block;
+		/* display: inline-block; */
 		font-family: 'Segoe UI';
 		vertical-align: middle;
+		margin-left: 68px;
 	}
 		.columniser .columniser-text:nth-child(1){
 			width: 380px;
 			text-align: center;
+			margin-left: 68px;
 		}
 		.columniser .columniser-text:nth-child(2){
 			width: 66.875%;
@@ -33,6 +35,7 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
+	margin-left: 68px;
 }
 .title {
 	background-color: #eaeaea;
@@ -125,7 +128,7 @@ body {
 }
 
 .scrolling-right {
-	margin-left: 5px;
+	margin-left: 2px;
 }
 
 .scrolling-left .arrow-left, .scrolling .arrow-right {
@@ -266,6 +269,7 @@ body {
 	.red-lining {
 		visibility : hidden;
 		min-width: 367px;
+		margin-left: 68px;
 	}
 	
 	.subParent:nth-child(-n+1)>.title {
