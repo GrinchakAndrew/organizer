@@ -44,6 +44,14 @@ Accordeon.prototype.scroller = function () {
     append: function () {
       $('#myDiv').append(config.columniser);
       $('#myDiv').append(config.redLining);
+	  /*the fix is added to rectify the width of the config.redLining to suite 100% upon appending and hoisting:*/
+	  /*
+	  config.redLining.css({
+        'margin': '',
+        'margin-left': '205px'
+      });
+	  */
+	  
     },
     calibrate: function () {
       $('.tabs-li').each(function () {
@@ -61,6 +69,12 @@ Accordeon.prototype.scroller = function () {
       $('.left-right-container').before(config.columniser);
       $('.left-right-container').before(config.redLining);
       config.columniser.css('margin', '');
+      /*
+	  config.redLining.css({
+        'margin': '',
+        'margin-left': '205px'
+      });
+	  */	  
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
 	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
 	  $('#myDiv').css({
@@ -571,9 +585,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             },
             scrollingArrows: function () {
                 if (!$('.scrolling-right').length) {
-					$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
-					//$('.tabulator-ul ').append(this.scrollingRight.append(this.arrowRight));
-					console.log($('.tabulator-ul ').length, "$('.tabulator-ul ').length");
+                    $('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
                     $('.columniser-text').eq(0).after(this.scrollingLeft.css('z-index', 1000));
@@ -856,7 +868,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					
                     $('.scrolling-left').on('mouseleave', function () {
                         var el = $(this.firstChild);
-						//$(this).css('left', '210px');
+						$(this).css('left', '210px');
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-right', '10px solid #C51F00');
@@ -1246,7 +1258,7 @@ $('document').ready(function () {
 				$('.columniser-text').first().append($('<div></div>', {'style' : 'float: left;', 'class' : 'breadcrumb'}).
 				append($('<div></div>', {'style' : "background-color : #6690BC; padding-top: 1px; padding-bottom: 1px; height: 17px; border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7; border-right: 1px solid #C7C7C7; padding-left: 5px; padding-right: 5px;font-family: 'Segoe UI'; font-size: 13px; cursor: pointer; color: #fff; float: left;", 'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));
 				$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/^(.*)<div/)[1], ''));
-				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
+				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; display: inline-block; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
 				$('.titles-column-left').css('display', 'none');
 				
 				
@@ -1260,7 +1272,8 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css({'margin-left' : '58px'});					
+					$('.red-lining').css({'margin-left' : '58px'});
+					//$('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'});
 						if ('ontouchstart' in document) {
 							$('.scrolling-left').css({'left' : '202px'});
 						}else {
