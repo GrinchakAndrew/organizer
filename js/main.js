@@ -935,9 +935,9 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 								index = 0, 
 								_w = 0;
                     $('.arrow-left').on(eventName, function (e) {
-                        
+                        var tabsBeforeOverflowingTabs = leftClickFn(_this);
 						_this.correctingTabsBeforeOverflowingTabWidth();
-                });
+					});
                     $('.arrow-right').on(eventName, function () {
                         rightClickFn(_this);
                     });
