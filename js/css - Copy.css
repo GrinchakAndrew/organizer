@@ -22,9 +22,10 @@ body {
 		display: inline-block;
 		font-family: 'Segoe UI';
 		vertical-align: middle;
+		margin-left: 15px;
 	}
 		.columniser .columniser-text:nth-child(1){
-			width: 380px;
+			/*width: 380px;*/
 			text-align: center;
 		}
 		.columniser .columniser-text:nth-child(2){
@@ -33,7 +34,9 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
+	/*margin-left: 68px;*/
 }
+
 .title {
 	background-color: #eaeaea;
 	border: 1px solid #fff;
@@ -86,7 +89,7 @@ body {
 .tabulator-div {
 	background-color: #fff;
 	border-left: 1px solid #C51F00;
-	border-top: 1px solid #C51F00;
+	border-top: 2px solid #C51F00;
 	border-right: 1px solid #C51F00;
 	padding: 1px 2px 0px 2px;
 }
@@ -103,10 +106,11 @@ body {
 .columniser {
 		width: 100%;
 	}
+/*
 .header {
 		width: 100%;
-		
 }
+*/
 
 .tabulator-wrapper {	
 	overflow: hidden;
@@ -121,11 +125,11 @@ body {
 }
 
 .scrolling-left {
-	margin-left: -2px;
+	margin-left: 2px;
 }
 
 .scrolling-right {
-	margin-left: 5px;
+	margin-left: 2px;
 }
 
 .scrolling-left .arrow-left, .scrolling .arrow-right {
@@ -177,7 +181,7 @@ body {
 .details-body-description {
 	font-size: 16px;
 	margin: 0 auto;
-	width : 90%;
+	width : 100%;
 	
 }
 
@@ -234,12 +238,11 @@ body {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.details-body-description {
-		width: 360px;
+		width: 100%;
 		margin: 0 auto;
 	}
 	
 	.header {
-		width: 100%;
 		background-color: #fff;
 		padding-bottom : 10px;
 	}
@@ -253,6 +256,7 @@ body {
 		position : fixed;
 		width: 360px;
 		top: 120px;
+		margin-left: 68px;
 	}
 	
 	.columniser {
@@ -266,6 +270,7 @@ body {
 	.red-lining {
 		visibility : hidden;
 		min-width: 367px;
+		margin-left: 9px;
 	}
 	
 	.subParent:nth-child(-n+1)>.title {
@@ -277,3 +282,4 @@ body {
 		width: device-width;
 	}
 }
+
