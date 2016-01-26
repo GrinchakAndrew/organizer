@@ -1269,7 +1269,7 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css(/* {'margin-left' : '205px'  *//*, 'width' : (window.innerWidth - 205)*/});
+					/* $('.red-lining').css({'margin-left' : '205px'  , 'width' : (window.innerWidth - 205)}); */
 					/* $('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'}); */
 						if ('ontouchstart' in document) {
 							//$('.scrolling-left').css({'left' : '202px'});
