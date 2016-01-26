@@ -571,8 +571,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             },
             scrollingArrows: function () {
                 if (!$('.scrolling-right').length) {
-					//$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
-					$('.tabulator-ul ').append(this.scrollingRight.append(this.arrowRight));
+					$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+					//$('.tabulator-ul ').append(this.scrollingRight.append(this.arrowRight));
 					console.log($('.tabulator-ul ').length, "$('.tabulator-ul ').length");
                 }
                 if (!$('.scrolling-left').length) {
