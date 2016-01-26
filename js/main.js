@@ -869,7 +869,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					
                     $('.scrolling-left').on('mouseleave', function () {
                         var el = $(this.firstChild);
-						$(this).css('left', '210px');
+						//$(this).css('left', '210px');
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-right', '10px solid #C51F00');
@@ -1272,13 +1272,7 @@ $('document').ready(function () {
 					$('.scrolling-right').css('display', 'none');
 					$('.red-lining').css('visibility', 'hidden');
 				}else {
-					$('.red-lining').css({'margin-left' : '58px'});
-						if ('ontouchstart' in document) {
-							//$('.scrolling-left').css({'left' : '202px'});
-						}else {
-							//$('.scrolling-left').css({'left' : '210px'});
-						}
-						$('.scrolling-right').css({'left' : ''});
+					$('.scrolling-right').css({'left' : ''});
 				}
 				
 			$('.columniser-text').first().on('mousedown', function(e) {
@@ -1292,7 +1286,7 @@ $('document').ready(function () {
 					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
 					$('.red-lining').css({'margin-left' : '1px'});
-					$('.scrolling-left').css({'left' : '392px'});
+					//$('.scrolling-left').css({'left' : '392px'});
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
 					$('.tabulator-wrapper').remove();
@@ -1307,7 +1301,10 @@ $('document').ready(function () {
                 $('.tabs-li').off(eventName);
                 $('.scrolling-left').css('display', 'none');
                 $('.scrolling-right').css('display', 'none');
-            } else if (document.documentElement.clientWidth > 360) {
+            } 
+			
+			/*
+			else if (document.documentElement.clientWidth > 360) {
                 (function () {
                     var _width = 0;
                     $('.tabs-li div').each(function () {
@@ -1322,6 +1319,8 @@ $('document').ready(function () {
                     }
                 })();
             }
+			*/
+			
         }); //.title').on event name ending (!) 
     });
 	

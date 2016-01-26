@@ -22,7 +22,7 @@ body {
 		display: inline-block;
 		font-family: 'Segoe UI';
 		vertical-align: middle;
-		margin-left: 68px;
+		margin-left: 15px;
 	}
 		.columniser .columniser-text:nth-child(1){
 			/*width: 380px;*/
@@ -34,7 +34,7 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
-	margin-left: 68px;
+	/*margin-left: 68px;*/
 }
 
 .title {
@@ -125,7 +125,7 @@ body {
 }
 
 .scrolling-left {
-	margin-left: -2px;
+	margin-left: 2px;
 }
 
 .scrolling-right {
@@ -270,7 +270,7 @@ body {
 	.red-lining {
 		visibility : hidden;
 		min-width: 367px;
-		margin-left: 68px;
+		margin-left: 9px;
 	}
 	
 	.subParent:nth-child(-n+1)>.title {
