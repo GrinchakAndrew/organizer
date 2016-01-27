@@ -579,8 +579,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 })
             },
             scrollingArrows: function () {
-                if (!$('.scrolling-right').length) {
-                    //$('.columniser-text').eq(1).after(this.scrollingRight.append(this.arrowRight));
+                if (!$('.scrolling-right').length) {                    
 					$('.tabulator-ul').append(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
@@ -604,7 +603,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 $('.scrolling-left').css('left', _left + 215 + 'px');
             },
             correctingOverflowingContainerWidth: function () {				
-                this.tabsOverallWidth += (10 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
+                this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
                 $('.tabulator-ul').width(this.tabsOverallWidth + 'px');
             },
             overFlowIndexCalculate: function () {
@@ -636,7 +635,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					
 					dif = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth);
 					if(dif <=2) {
-						$('.tabulator-ul').width($('.tabulator-ul').width() + dif + 1);
+						//$('.tabulator-ul').width($('.tabulator-ul').width() + dif + 1);
+						$('.tabulator-ul').width($('.tabulator-ul').width() + dif);
 					}else if (dif == 0) {
 					   dif = 1.5 * this.TabsBeforeOverflowingTab.length;
 					   difPerEach = 0.5;
@@ -864,7 +864,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					
                     $('.scrolling-left').on('mouseleave', function () {
                         var el = $(this.firstChild);
-						$(this).css('left', '210px');
+						//$(this).css('left', '210px');
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-right', '10px solid #C51F00');
