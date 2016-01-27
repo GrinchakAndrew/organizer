@@ -1265,9 +1265,9 @@ $('document').ready(function () {
 					}); */
 					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
 					$('.tabulator-wrapper').css({'overflow' : 'visible', 'width' : $('.tabs-li').first().outerWidth() + 'px'});
-					$('.scrolling-left').css('display', 'none');
-					$('.scrolling-right').css('display', 'none');
-					$('.red-lining').css('visibility', 'hidden');
+					/* $('.scrolling-left').css('display', 'none');
+					$('.scrolling-right').css('display', 'none') */;
+					/* $('.red-lining').css('visibility', 'hidden'); */
 				}else {
 					/* $('.red-lining').css({'margin-left' : '205px'  , 'width' : (window.innerWidth - 205)}); */
 					/* $('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'}); */
@@ -1306,21 +1306,21 @@ $('document').ready(function () {
                 $('.tabs-li').off(eventName);
                 $('.scrolling-left').css('display', 'none');
                 $('.scrolling-right').css('display', 'none');
-            } else if (document.documentElement.clientWidth > 360) {
+            } /* else if (document.documentElement.clientWidth > 360) {
                 (function () {
                     var _width = 0;
                     $('.tabs-li div').each(function () {
 						_width += $(this).outerWidth();
                     })
                     if (_width < $('.tabulator-wrapper').outerWidth()) {
-                        $('.scrolling-left').css('display', 'none');
-                        $('.scrolling-right').css('display', 'none');
+                         $('.scrolling-left').css('display', 'none');
+                        $('.scrolling-right').css('display', 'none'); 
                     } else {
                         $('.scrolling-left').css('display', '');
                         $('.scrolling-right').css('display', '');
                     }
                 })();
-            }
+            } */
         }); //.title').on event name ending (!) 
     });
  url = 'data/tasks.js';
