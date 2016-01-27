@@ -35,7 +35,7 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
-	margin-left: 68px;
+	margin-left: 1%;
 }
 .title {
 	background-color: #eaeaea;
@@ -65,6 +65,7 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	height: 100%;
+	margin-left: 1%;
 }
 .accordeon-wrapper  .details-body  {
 	font-size: 12px;
@@ -180,7 +181,7 @@ body {
 
 .details-body-description {
 	font-size: 16px;
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	width : 90%;
 	
 }
@@ -241,7 +242,7 @@ body {
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.details-body-description {
 		width: 360px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 	}
 	
 	.header {

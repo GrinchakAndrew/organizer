@@ -587,10 +587,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                         return _r;
                     })(),
                     _left = parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0) + $('.columniser-text').first().outerWidth();
-
-              /*   $('.scrolling-right').css('left', _right + 'px');
-                $('.scrolling-left').css('left', _left + 215 + 'px'); */
-            },
+              },
             correctingOverflowingContainerWidth: function () {				
                 this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
                 $('.tabulator-ul').width(this.tabsOverallWidth + 'px');
@@ -681,30 +678,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                     for (var i = _this.overFlowIndex[_this.clicksCount - 1] + 1; i < _this.arrOverflowingTabs.length; i++) {
                         _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
                     }
-
-                    /* (function () {
-                        if (!_this.runOnce) {
-                            return (function () {
-                                _this.runOnce = true;
-                                for (var i = _this.overFlowIndex[_this.clicksCount - 1] + 1; i--;) {
-                                    if (_this.arrOverflowingTabs[i]) {
-                                        _this._width += _this.arrOverflowingTabs[i].offsetWidth;
-                                    }
-                                }
-                                var _dif = ($('.tabulator-wrapper').outerWidth() - _this._width),
-                                    _difPerEach = _dif / (_this.overFlowIndex[_this.clicksCount - 1] + 1),
-                                    rounding = _difPerEach - (_difPerEach | 0);
-                                for (var i = _this.overFlowIndex[_this.clicksCount - 1] + 1; i--;) {
-                                    if (_this.arrOverflowingTabs[i] && _this.arrOverflowingTabs[i].parentNode) {
-										
-                                        //push 12:59, Jan-27, 2015 _this.arrOverflowingTabs[i].parentNode.style.width = _this.arrOverflowingTabs[i].parentNode.offsetWidth + (_difPerEach | 0) + (Math.ceil(rounding) / 2) + "px";
-                                    }
-                                }
-                                $('.tabulator-ul').width($('.tabulator-ul').width() + _this.width + _dif + Math.ceil(rounding) + 'px');
-                            })();
-                        }
-                    })() */
-
                 } else if (_this.clicksCount > 1 && !!_this.overFlowIndex[_this.clicksCount - 1]) {
                     if (_this.overFlowIndex[_this.clicksCount - 2] + 1 !== _this.overFlowIndex[_this.clicksCount - 1]) {
                         for (var i = _this.overFlowIndex[_this.clicksCount - 2] + 1; i--;) {
@@ -735,17 +708,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                             _difPerEach = count && _dif ? _dif / count : 0;
                             rounding = _difPerEach ? _difPerEach - (_difPerEach | 0) : 0;
                             checkSum = _width + ((_difPerEach | 0) + (Math.ceil(rounding) ? Math.ceil(rounding)/ 2 : 0)) * count;
-
-                            for (var i = _this.overFlowIndex[_this.clicksCount - 2] + 1; i < _this.overFlowIndex[_this.clicksCount - 1] + 1; i++) {
-                                if (_this.arrOverflowingTabs[i]) {
-                                    if (checkSum > $('.tabulator-wrapper').outerWidth()) {
-                                        /* _this.arrOverflowingTabs[i].parentNode.style.width = 
-										_this.arrOverflowingTabs[i].parentNode.offsetWidth + (_difPerEach | 0) + "px"; */
-                                    } else {
-                                        /* _this.arrOverflowingTabs[i].parentNode.style.width = _this.arrOverflowingTabs[i].parentNode.offsetWidth + (_difPerEach | 0) + (Math.ceil(rounding) ?  Math.ceil(rounding)/ 2 : 0) + "px"; */
-                                    }
-                                }
-                            }
                             $('.tabulator-ul').width($('.tabulator-ul').width() + _width + _dif + Math.ceil(rounding) + 'px');
                         })();
                     })();
@@ -1242,23 +1204,11 @@ $('document').ready(function () {
 				
 				
 				if(document.documentElement.clientWidth < 400) {
-					/* $('.tabs-li .tabulator-div').each(function(){
-						$(this).css({'display' : '', 'width' : document.documentElement.clientWidth});
-					}); */
 					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
 					$('.tabulator-wrapper').css({'overflow' : 'visible', 'width' : $('.tabs-li').first().outerWidth() + 'px'});
-					/* $('.scrolling-left').css('display', 'none');
-					$('.scrolling-right').css('display', 'none') */;
-					/* $('.red-lining').css('visibility', 'hidden'); */
+					
 				}else {
-					/* $('.red-lining').css({'margin-left' : '205px'  , 'width' : (window.innerWidth - 205)}); */
-					/* $('.columniser .columniser-text:nth-child(1)').css({'width' : '205px'}); */
-						if ('ontouchstart' in document) {
-							//$('.scrolling-left').css({'left' : '202px'});
-						}else {
-							//$('.scrolling-left').css({'left' : '210px'});
-						}
-						$('.scrolling-right').css({'left' : ''});
+					$('.scrolling-right').css({'left' : ''});
 				}
 				
 			$('.columniser-text').first().on('mousedown', function(e) {
@@ -1273,7 +1223,6 @@ $('document').ready(function () {
 					$($('.columniser-text')[1]).remove();
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
 					$('.red-lining').css({'margin-left' : ''});
-					/* $('.scrolling-left').css({'left' : '392px'}); */
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
 					$('.tabulator-wrapper').remove();
@@ -1288,21 +1237,7 @@ $('document').ready(function () {
                 $('.tabs-li').off(eventName);
                 $('.scrolling-left').css('display', 'none');
                 $('.scrolling-right').css('display', 'none');
-            } /* else if (document.documentElement.clientWidth > 360) {
-                (function () {
-                    var _width = 0;
-                    $('.tabs-li div').each(function () {
-						_width += $(this).outerWidth();
-                    })
-                    if (_width < $('.tabulator-wrapper').outerWidth()) {
-                         $('.scrolling-left').css('display', 'none');
-                        $('.scrolling-right').css('display', 'none'); 
-                    } else {
-                        $('.scrolling-left').css('display', '');
-                        $('.scrolling-right').css('display', '');
-                    }
-                })();
-            } */
+            } 
         }); //.title').on event name ending (!) 
     });
  url = 'data/tasks.js';
