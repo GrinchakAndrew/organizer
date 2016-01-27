@@ -839,7 +839,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 } else {
 						$('.scrolling-left').on('mouseover', function () {
 							var el = $(this.firstChild);
-							$(this).css('left', '195px');
+							/* $(this).css('left', '195px'); */
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
