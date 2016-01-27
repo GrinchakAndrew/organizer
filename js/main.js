@@ -641,15 +641,15 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					   dif = 1.5 * this.TabsBeforeOverflowingTab.length;
 					   difPerEach = 0.5;
 					   rounding = difPerEach - (difPerEach | 0);
-					   $(this.TabsBeforeOverflowingTab).each(function () {
+					   /* $(this.TabsBeforeOverflowingTab).each(function () {
 							$(this).parent().css('width', parseFloat(difPerEach.toPrecision(3)) + $(this).outerWidth() + 'px');
-						});
+						}); */
 					   $('.tabulator-ul').width($('.tabulator-ul').width() + dif + Math.ceil(rounding) + 2 + 'px');
 					} else if((dif + TabsBeforeOverflowingTabOverallWidth) > $('.tabuator-wrapper').outerWidth()) {
 						difPerEach = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth) / (this.TabsBeforeOverflowingTab.length);
-						 $(this.TabsBeforeOverflowingTab).each(function () {
+						 /* $(this.TabsBeforeOverflowingTab).each(function () {
 							$(this).parent().css('width', parseFloat(difPerEach.toPrecision(3)) + $(this).outerWidth() + 'px');
-						});
+						}); */
 					}
                 }
             },
