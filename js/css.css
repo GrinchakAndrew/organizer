@@ -16,18 +16,18 @@ body {
 	font-size: 12px;
 }
 .accordeon-wrapper {
-	margin: 15px;
+	margin: 15px 15px 0 0;
 }
 	.columniser .columniser-text {
 		/* display: inline-block; */
 		font-family: 'Segoe UI';
 		vertical-align: middle;
-		margin-left: 68px;
+/* 		margin-left: 68px; */
 	}
 		.columniser .columniser-text:nth-child(1){
 			width: 380px;
 			text-align: center;
-			margin-left: 68px;
+			/* margin-left: 68px; */
 		}
 		.columniser .columniser-text:nth-child(2){
 			width: 66.875%;
