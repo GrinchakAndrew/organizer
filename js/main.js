@@ -44,11 +44,6 @@ Accordeon.prototype.scroller = function () {
     append: function () {
       $('#myDiv').append(config.columniser);
       $('#myDiv').append(config.redLining);
-	  /*the fix is added to rectify the width of the config.redLining to suite 100% upon appending and hoisting:*/
-	  /* config.redLining.css({
-        'margin': '',
-        'margin-left': '205px'
-      }); */
     },
     calibrate: function () {
       $('.tabs-li').each(function () {
@@ -56,7 +51,6 @@ Accordeon.prototype.scroller = function () {
           config.redLiningCalculatedWidth += $(this).outerWidth();
         }
       });
-	  //$('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
       $('.header').first().css('background-color', '#FFF');	
 		$('#myDiv').css({
         'position': 'fixed'
@@ -67,27 +61,22 @@ Accordeon.prototype.scroller = function () {
       $('.left-right-container').before(config.redLining);
       config.columniser.css('margin', '');
       config.redLining.css({
-        'margin': ''/* ,
-        'margin-left': '205px' */
+        'margin': ''
       });
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
-	  //$('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
 	  $('#myDiv').css({
         'position': 'static'
       });
 	},
 	offsetData : {x : 0, y : 0, xOffset : 0, yOffset : 0},
-	
 	offSetStart : function() {
 			config.offsetData.x = event.touches[0].pageX;
 			config.offsetData.y = event.touches[0].pageY;
 		},
-		
 	offsetEnd : function() {
 			config.offsetData.xOffset = config.offsetData.x - event.touches[0].pageX;
 			config.offsetData.yOffset = config.offsetData.y - event.touches[0].pageY;
 	},
-	
     scroller: function (e, iOS, android) {
       var _config = {
         initScrollTop: 0,
@@ -599,8 +588,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                     })(),
                     _left = parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0) + $('.columniser-text').first().outerWidth();
 
-                $('.scrolling-right').css('left', _right + 'px');
-                $('.scrolling-left').css('left', _left + 215 + 'px');
+              /*   $('.scrolling-right').css('left', _right + 'px');
+                $('.scrolling-left').css('left', _left + 215 + 'px'); */
             },
             correctingOverflowingContainerWidth: function () {				
                 this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
@@ -635,21 +624,14 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					
 					dif = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth);
 					if(dif <=2) {
-						//$('.tabulator-ul').width($('.tabulator-ul').width() + dif + 1);
 						$('.tabulator-ul').width($('.tabulator-ul').width() + dif);
 					}else if (dif == 0) {
 					   dif = 1.5 * this.TabsBeforeOverflowingTab.length;
 					   difPerEach = 0.5;
 					   rounding = difPerEach - (difPerEach | 0);
-					   /* $(this.TabsBeforeOverflowingTab).each(function () {
-							$(this).parent().css('width', parseFloat(difPerEach.toPrecision(3)) + $(this).outerWidth() + 'px');
-						}); */
 					   $('.tabulator-ul').width($('.tabulator-ul').width() + dif + Math.ceil(rounding) + 2 + 'px');
 					} else if((dif + TabsBeforeOverflowingTabOverallWidth) > $('.tabuator-wrapper').outerWidth()) {
 						difPerEach = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth) / (this.TabsBeforeOverflowingTab.length);
-						 /* $(this.TabsBeforeOverflowingTab).each(function () {
-							$(this).parent().css('width', parseFloat(difPerEach.toPrecision(3)) + $(this).outerWidth() + 'px');
-						}); */
 					}
                 }
             },
@@ -843,7 +825,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 if ('ontouchstart' in document.createElement('div')) {
                     $('.scrolling-left').on('touchstart', function () {
                         var el = $(this.firstChild);
-							$(this).css('left', '195px');
+							/* $(this).css('left', '195px'); */
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
@@ -1291,7 +1273,7 @@ $('document').ready(function () {
 					$($('.columniser-text')[1]).remove();
 					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
 					$('.red-lining').css({'margin-left' : ''});
-					$('.scrolling-left').css({'left' : '392px'});
+					/* $('.scrolling-left').css({'left' : '392px'}); */
 					$('.accordeon-wrapper .details-body .details-body-description').html('');
 					$('.accordeon-wrapper .details-body .details-body-code').html('');
 					$('.tabulator-wrapper').remove();
