@@ -56,7 +56,7 @@ Accordeon.prototype.scroller = function () {
           config.redLiningCalculatedWidth += $(this).outerWidth();
         }
       });
-	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
+	  //$('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
       $('.header').first().css('background-color', '#FFF');	
 		$('#myDiv').css({
         'position': 'fixed'
@@ -71,7 +71,7 @@ Accordeon.prototype.scroller = function () {
         'margin-left': '205px' */
       });
       $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
-	  $('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
+	  //$('.scrolling-left').css({'left': $('#myDiv').length && $('#myDiv').children().length ? $('.scrolling-left').css('left', $('.columniser-text').width() - 12 + 'px') : '430px'});
 	  $('#myDiv').css({
         'position': 'static'
       });
@@ -1258,11 +1258,10 @@ $('document').ready(function () {
 				$('.titles-column-left').css('display', 'none');
 				
 				
-				if(document.documentElement.clientWidth < 400) { 
-					
-					$('.tabs-li .tabulator-div').each(function(){
+				if(document.documentElement.clientWidth < 400) {
+					/* $('.tabs-li .tabulator-div').each(function(){
 						$(this).css({'display' : '', 'width' : document.documentElement.clientWidth});
-					});
+					}); */
 					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
 					$('.tabulator-wrapper').css({'overflow' : 'visible', 'width' : $('.tabs-li').first().outerWidth() + 'px'});
 					$('.scrolling-left').css('display', 'none');
