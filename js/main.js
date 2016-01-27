@@ -714,7 +714,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                                     rounding = _difPerEach - (_difPerEach | 0);
                                 for (var i = _this.overFlowIndex[_this.clicksCount - 1] + 1; i--;) {
                                     if (_this.arrOverflowingTabs[i] && _this.arrOverflowingTabs[i].parentNode) {
-                                        _this.arrOverflowingTabs[i].parentNode.style.width = _this.arrOverflowingTabs[i].parentNode.offsetWidth + (_difPerEach | 0) + (Math.ceil(rounding) / 2) + "px";
+										/*push 12:59, Jan-27, 2015*/
+                                        //_this.arrOverflowingTabs[i].parentNode.style.width = _this.arrOverflowingTabs[i].parentNode.offsetWidth + (_difPerEach | 0) + (Math.ceil(rounding) / 2) + "px";
                                     }
                                 }
                                 $('.tabulator-ul').width($('.tabulator-ul').width() + _this.width + _dif + Math.ceil(rounding) + 'px');
