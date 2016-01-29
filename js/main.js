@@ -610,7 +610,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 }
             },
             correctingTabsBeforeOverflowingTabWidth: function () {
-                if (this.TabsBeforeOverflowingTab.length) {
+                /* if (this.TabsBeforeOverflowingTab.length) {
                     var TabsBeforeOverflowingTabOverallWidth = 0,
                     dif,
                     difPerEach,
@@ -630,7 +630,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					} else if((dif + TabsBeforeOverflowingTabOverallWidth) > $('.tabuator-wrapper').outerWidth()) {
 						difPerEach = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth) / (this.TabsBeforeOverflowingTab.length);
 					}
-                }
+                } */
             },
             posting: function (path) {
 			'use strict'
@@ -658,7 +658,76 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             },
             runOnce: false,
             rightClickFn: function (_this) {
-                $(_this.arrOverflowingTabs).each(function () {
+				switch (_this.clicksCount) {
+                    case 0:
+                        {
+                            $(_this.arrOverflowingTabs).each(function(i, j) {
+                                $(this).parent().css('display', '');
+                                $(this).css('display', '');
+                            });
+                            _this.TabsBeforeOverflowingTab[_this.clicksCount] ?
+                                _this.TabsBeforeOverflowingTab[_this.clicksCount].parentNode.style.display = 'none' : '';
+                            for (var i = 1; i < _this.arrOverflowingTabs.length; i++) {
+                                _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
+                            }
+                            if (_this.arrOverflowingTabs[_this.clicksCount].children[0].tagName == 'SPAN') {
+                                _this.arrOverflowingTabs[_this.clicksCount].children[0].style.whiteSpace = 'nowrap';
+                                $('.tabulator-wrapper').width(_this.arrOverflowingTabs[_this.clicksCount].children[0].offsetWidth + 5);
+                            }
+                            if (!_this.arrOverflowingTabs[_this.clicksCount + 1]) {
+                                $('.scrolling-right').css('display', 'none');
+                                $('.scrolling-left').css('display', '');
+                                $('.scrolling-left .arrow-left').css('display', '');
+                            }
+                            break;
+                        }
+                    case 1:
+                        {
+                            _this.arrOverflowingTabs[_this.clicksCount - 1].parentNode.style.display = 'none';
+                            _this.arrOverflowingTabs[_this.clicksCount - 1].style.display = 'none';
+                            $(_this.arrOverflowingTabs).each(function(i, j) {
+                                if (j !== _this.arrOverflowingTabs[_this.clicksCount - 1]) {
+                                    $(this).parent().css('display', '');
+                                    $(this).css('display', '');
+                                }
+                            });
+                            _this.overFlowIndexCalculate();
+                            for (var i = _this.overFlowIndex[_this.clicksCount] + 1; i < _this.arrOverflowingTabs.length; i++) {
+                                _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
+                            }
+                            $('.tabs-li:not([style*=display])').css('white-space', 'nowrap');
+                            $('.tabulator-wrapper').outerWidth($('.tabs-li:not([style*=display]) div span').outerWidth() + 10);
+
+                            break;
+                        }
+                    default:
+                        {
+                            if (!!_this.overFlowIndex[_this.clicksCount - 1] && _this.arrOverflowingTabs[_this.overFlowIndex[_this.clicksCount]]) {
+                                $(_this.arrOverflowingTabs).each(function(i, j) {
+                                    $(this).parent().css('display', 'none');
+                                    $(this).css('display', 'none');
+                                });
+                                _this.arrOverflowingTabs[_this.overFlowIndex[_this.clicksCount]].parentNode.style.display = '';
+                                _this.arrOverflowingTabs[_this.overFlowIndex[_this.clicksCount]].style.display = '';
+
+                                $('.tabs-li:not([style*=display])').css('white-space', 'nowrap');
+                                $('.tabulator-wrapper').outerWidth($('.tabs-li:not([style*=display]) div span').outerWidth() + 10);
+                            } else {
+                                $('.scrolling-right').css('display', 'none');
+                                $('.scrolling-left').css('display', '');
+                            }
+                            if (_this.arrOverflowingTabs[_this.arrOverflowingTabs.length - 1] === _this.arrOverflowingTabs[_this.overFlowIndex[_this.clicksCount]] ||
+                                _this.arrOverflowingTabs[_this.overFlowIndex[_this.clicksCount]] == undefined) {
+                                $('.scrolling-right').css('display', 'none');
+                                $('.scrolling-left').css('display', '');
+                                $('.scrolling-left .arrow-left').css('display', '');
+                            }
+                            break;
+                        }
+                }
+                _this.clicksCount += 1;
+				
+                /* $(_this.arrOverflowingTabs).each(function () {
                     $(this).parent().css('display', '');
 					$(this).css('display', '');
                 })
@@ -716,13 +785,12 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 if (_this.clicksCount > 1 && !_this.overFlowIndex[_this.clicksCount]) {
                     $('.scrolling-right').css('display', 'none');
                     $('.scrolling-left').css('display', '');
-                }
+                } */
             },
-            leftClickFn: function (_this) {
+            leftClickFn: function (_this) {				
                 $(_this.TabsBeforeOverflowingTab).each(function () {
                     $(this).parent().css('display', '');
                 });
-
                 $(_this.arrOverflowingTabs).each(function () {
                     $(this).parent().css('display', 'none');
                 });
@@ -734,7 +802,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 						'border-bottom': '10px solid rgba(0, 0, 0, 0)',
 						'border-right': '10px solid #C51F00'
 					});
-
                 $('.scrolling-right div').first().css({
                     'border-top': '10px solid rgba(0, 0, 0, 0)',
                     'border-bottom': '10px solid rgba(0, 0, 0, 0)',
@@ -787,7 +854,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 if ('ontouchstart' in document.createElement('div')) {
                     $('.scrolling-left').on('touchstart', function () {
                         var el = $(this.firstChild);
-							/* $(this).css('left', '195px'); */
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
@@ -801,27 +867,22 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 } else {
 						$('.scrolling-left').on('mouseover', function () {
 							var el = $(this.firstChild);
-							/* $(this).css('left', '195px'); */
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
                     });
-					
                     $('.scrolling-left').on('mouseleave', function () {
                         var el = $(this.firstChild);
-						//$(this).css('left', '210px');
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-right', '10px solid #C51F00');
                     });
-					
                     $('.scrolling-right').on('mouseover', function () {
                         var el = $(this.firstChild);
                         el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
                         el.css('border-left', '25px solid #C51F00');
                     });
-
                     $('.scrolling-right').on('mouseleave', function () {
                         var el = $(this.firstChild);
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
@@ -882,14 +943,14 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 								_w = 0;
                     $('.arrow-left').on(eventName, function (e) {
                         var tabsBeforeOverflowingTabs = leftClickFn(_this);
-						_this.correctingTabsBeforeOverflowingTabWidth();
+						//_this.correctingTabsBeforeOverflowingTabWidth();
 					});
                     $('.arrow-right').on(eventName, function () {
                         rightClickFn(_this);
                     });
                     _this.arrowsHover4iOSnMS();
                 }
-                _this.correctingTabsBeforeOverflowingTabWidth();
+                //_this.correctingTabsBeforeOverflowingTabWidth();
 				
 				$('.tabs-li').on(eventName, function () {
                     tabsClickAndPostingCall(_this, this);
