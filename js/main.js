@@ -577,7 +577,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 }
             },
             correctingScrollingArrowsMarginLeft: function () {
-                var _right = 220 +
+                /* var _right = 220 +
                     (function () {
                         var _r = 0;
                         $('.columniser-text').each(function () {
@@ -586,11 +586,11 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                         _r += parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0);
                         return _r;
                     })(),
-                    _left = parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0) + $('.columniser-text').first().outerWidth();
+                    _left = parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0) + $('.columniser-text').first().outerWidth(); */
               },
             correctingOverflowingContainerWidth: function () {				
-                this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
-                $('.tabulator-ul').width(this.tabsOverallWidth + 'px');
+                /* this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
+                $('.tabulator-ul').width(this.tabsOverallWidth + 'px'); */
             },
             overFlowIndexCalculate: function () {
                 if (!this.overFlowIndex.length) {
@@ -608,29 +608,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                         }
                     }
                 }
-            },
-            correctingTabsBeforeOverflowingTabWidth: function () {
-                /* if (this.TabsBeforeOverflowingTab.length) {
-                    var TabsBeforeOverflowingTabOverallWidth = 0,
-                    dif,
-                    difPerEach,
-                    rounding;
-					$(this.TabsBeforeOverflowingTab).each(function () {
-                        TabsBeforeOverflowingTabOverallWidth += $(this).outerWidth();
-                    });
-					
-					dif = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth);
-					if(dif <=2) {
-						$('.tabulator-ul').width($('.tabulator-ul').width() + dif);
-					}else if (dif == 0) {
-					   dif = 1.5 * this.TabsBeforeOverflowingTab.length;
-					   difPerEach = 0.5;
-					   rounding = difPerEach - (difPerEach | 0);
-					   $('.tabulator-ul').width($('.tabulator-ul').width() + dif + Math.ceil(rounding) + 2 + 'px');
-					} else if((dif + TabsBeforeOverflowingTabOverallWidth) > $('.tabuator-wrapper').outerWidth()) {
-						difPerEach = ($('.tabulator-wrapper').outerWidth() - TabsBeforeOverflowingTabOverallWidth) / (this.TabsBeforeOverflowingTab.length);
-					}
-                } */
             },
             posting: function (path) {
 			'use strict'
@@ -672,7 +649,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                             }
                             if (_this.arrOverflowingTabs[_this.clicksCount].children[0].tagName == 'SPAN') {
                                 _this.arrOverflowingTabs[_this.clicksCount].children[0].style.whiteSpace = 'nowrap';
-                                //$('.tabulator-wrapper').width(_this.arrOverflowingTabs[_this.clicksCount].children[0].offsetWidth + 5);
                             }
                             if (!_this.arrOverflowingTabs[_this.clicksCount + 1]) {
                                 $('.scrolling-right').css('display', 'none');
@@ -696,7 +672,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                                 _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
                             }
                             $('.tabs-li:not([style*=display])').css('white-space', 'nowrap');
-                            //$('.tabulator-wrapper').outerWidth($('.tabs-li:not([style*=display]) div span').outerWidth() + 10);
                             break;
                         }
                     default:
@@ -725,66 +700,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                         }
                 }
                 _this.clicksCount += 1;
-				
-                /* $(_this.arrOverflowingTabs).each(function () {
-                    $(this).parent().css('display', '');
-					$(this).css('display', '');
-                })
-				
-                _this.clicksCount += 1;
-                if (_this.arrOverflowingTabsWidth < $('.tabulator-wrapper').outerWidth()) {
-                    $(_this.TabsBeforeOverflowingTab).each(function () {
-                        $(this).parent().css('display', 'none');
-                    })
-
-                } else if (_this.clicksCount === 1) {
-                    $(_this.TabsBeforeOverflowingTab).each(function () {
-                        $(this).parent().css('display', 'none');
-                    })
-                    _this.overFlowIndexCalculate();
-
-                    for (var i = _this.overFlowIndex[_this.clicksCount - 1] + 1; i < _this.arrOverflowingTabs.length; i++) {
-                        _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
-                    }
-                } else if (_this.clicksCount > 1 && !!_this.overFlowIndex[_this.clicksCount - 1]) {
-                    if (_this.overFlowIndex[_this.clicksCount - 2] + 1 !== _this.overFlowIndex[_this.clicksCount - 1]) {
-                        for (var i = _this.overFlowIndex[_this.clicksCount - 2] + 1; i--;) {
-                            _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
-                        }
-                        for (var i = _this.overFlowIndex[_this.clicksCount - 2] + 1; i < _this.overFlowIndex[_this.clicksCount - 1] + 1; i++) {
-                            _this.arrOverflowingTabs[i] ? _this.arrOverflowingTabs[i].parentNode.style.display = '' : null;
-                        }
-                    }
-
-                    (function () {
-                        var _width = 0,
-                            _dif = 0,
-                            _difPerEach = 0,
-                            rounding = 0,
-                            count = 0,
-                            checkSum;
-
-                        return (function () {						
-                            for (var i = _this.overFlowIndex[_this.clicksCount - 2] + 1; i < _this.overFlowIndex[_this.clicksCount - 1] + 1; i++) {
-                                if (_this.arrOverflowingTabs[i] && !_this.arrOverflowingTabs[i].className.match(/calibrated/)) {
-                                    _width += _this.arrOverflowingTabs[i].offsetWidth;
-                                    _this.arrOverflowingTabs[i].className = _this.arrOverflowingTabs[i].className + ' calibrated';
-                                    count++;
-                                }
-                            }
-                            _dif = $('.tabulator-wrapper').outerWidth() - _width;
-                            _difPerEach = count && _dif ? _dif / count : 0;
-                            rounding = _difPerEach ? _difPerEach - (_difPerEach | 0) : 0;
-                            checkSum = _width + ((_difPerEach | 0) + (Math.ceil(rounding) ? Math.ceil(rounding)/ 2 : 0)) * count;
-                            $('.tabulator-ul').width($('.tabulator-ul').width() + _width + _dif + Math.ceil(rounding) + 'px');
-                        })();
-                    })();
-
-                }
-                if (_this.clicksCount > 1 && !_this.overFlowIndex[_this.clicksCount]) {
-                    $('.scrolling-right').css('display', 'none');
-                    $('.scrolling-left').css('display', '');
-                } */
             },
             leftClickFn: function (_this) {				
                 $(_this.TabsBeforeOverflowingTab).each(function () {
@@ -934,23 +849,20 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                     _this.scrollingArrows();
                     _this.overFlow(_this.arrOverflowingTabs);
-                    _this.correctingOverflowingContainerWidth();
-                    _this.correctingScrollingArrowsMarginLeft();
+                    //_this.correctingOverflowingContainerWidth();
+                    //_this.correctingScrollingArrowsMarginLeft();
 					var tabsLiCol = document.querySelectorAll('.tabs-li'), 
 								tabsLiColwidth = 0, 
 								index = 0, 
 								_w = 0;
                     $('.arrow-left').on(eventName, function (e) {
                         var tabsBeforeOverflowingTabs = leftClickFn(_this);
-						//_this.correctingTabsBeforeOverflowingTabWidth();
 					});
                     $('.arrow-right').on(eventName, function () {
                         rightClickFn(_this);
                     });
                     _this.arrowsHover4iOSnMS();
                 }
-                //_this.correctingTabsBeforeOverflowingTabWidth();
-				
 				$('.tabs-li').on(eventName, function () {
                     tabsClickAndPostingCall(_this, this);
 					if($('.tabs-li').length > 1) {
