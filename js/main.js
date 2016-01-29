@@ -672,7 +672,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                             }
                             if (_this.arrOverflowingTabs[_this.clicksCount].children[0].tagName == 'SPAN') {
                                 _this.arrOverflowingTabs[_this.clicksCount].children[0].style.whiteSpace = 'nowrap';
-                                $('.tabulator-wrapper').width(_this.arrOverflowingTabs[_this.clicksCount].children[0].offsetWidth + 5);
+                                //$('.tabulator-wrapper').width(_this.arrOverflowingTabs[_this.clicksCount].children[0].offsetWidth + 5);
                             }
                             if (!_this.arrOverflowingTabs[_this.clicksCount + 1]) {
                                 $('.scrolling-right').css('display', 'none');
@@ -696,8 +696,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                                 _this.arrOverflowingTabs[i].parentNode.style.display = 'none';
                             }
                             $('.tabs-li:not([style*=display])').css('white-space', 'nowrap');
-                            $('.tabulator-wrapper').outerWidth($('.tabs-li:not([style*=display]) div span').outerWidth() + 10);
-
+                            //$('.tabulator-wrapper').outerWidth($('.tabs-li:not([style*=display]) div span').outerWidth() + 10);
                             break;
                         }
                     default:
