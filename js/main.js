@@ -576,22 +576,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                     this.scrollingLeft.append(this.arrowLeft);
                 }
             },
-            correctingScrollingArrowsMarginLeft: function () {
-                /* var _right = 220 +
-                    (function () {
-                        var _r = 0;
-                        $('.columniser-text').each(function () {
-                            _r += $(this).outerWidth();
-                        })
-                        _r += parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0);
-                        return _r;
-                    })(),
-                    _left = parseInt(!!$('.accordeon-wrapper').css('marginLeft') ? $('.accordeon-wrapper').css('marginLeft').match(/\d+/g)[0] : 0) + $('.columniser-text').first().outerWidth(); */
-              },
-            correctingOverflowingContainerWidth: function () {				
-                /* this.tabsOverallWidth += (2 * tabsNum) + $('.scrolling-left').outerWidth() + $('.scrolling-right').outerWidth();
-                $('.tabulator-ul').width(this.tabsOverallWidth + 'px'); */
-            },
             overFlowIndexCalculate: function () {
                 if (!this.overFlowIndex.length) {
                     for (var i = 0; i < this.arrOverflowingTabs.length; i++) {
@@ -849,8 +833,6 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                     _this.scrollingArrows();
                     _this.overFlow(_this.arrOverflowingTabs);
-                    //_this.correctingOverflowingContainerWidth();
-                    //_this.correctingScrollingArrowsMarginLeft();
 					var tabsLiCol = document.querySelectorAll('.tabs-li'), 
 								tabsLiColwidth = 0, 
 								index = 0, 
