@@ -10,6 +10,7 @@ body {
 }
 .titles-column-left {
 	font-family: "Verdana";
+	width: 25.875%;
 	margin-left: 3%;
 }
 .details-body {
@@ -68,10 +69,6 @@ body {
 }
 .left-right-container {
 	width: 100%;
-}
-.titles-column-left {
-	width: 25.875%;
-	margin-left: 3%;
 }
 .tabulator-ul {
 	list-style-type: none;
