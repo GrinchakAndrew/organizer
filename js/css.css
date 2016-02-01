@@ -19,15 +19,12 @@ body {
 	margin: 15px 15px 0 0;
 }
 	.columniser .columniser-text {
-		/* display: inline-block; */
 		font-family: 'Segoe UI';
 		vertical-align: middle;
-/* 		margin-left: 68px; */
 	}
 		.columniser .columniser-text:nth-child(1){
 			width: 380px;
 			text-align: center;
-			/* margin-left: 68px; */
 		}
 		.columniser .columniser-text:nth-child(2){
 			width: 66.875%;
@@ -35,14 +32,12 @@ body {
 .red-lining {
 	height: 3px;
 	background-color: #C51F00;
-	/* margin-left: 0.85%; */
 }
 .title {
 	background-color: #eaeaea;
 	border: 1px solid #fff;
 	color: #C51F00;
 	cursor: pointer;
-	/* width: 359px; */
 	width: 296px;
 }
 .subParent  {
@@ -65,8 +60,6 @@ body {
 .accordeon-wrapper .titles-column-left, .accordeon-wrapper  .details-body {
 	display: inline-block;
 	vertical-align: top;
-	/* height: 100%; */
-	/* margin-left: 1%; */
 }
 .accordeon-wrapper  .details-body  {
 	font-size: 12px;
@@ -109,8 +102,7 @@ body {
 		width: 100%;
 	}
 .header {
-		width: 100%;
-		
+		width: 100%;	
 }
 
 .tabulator-wrapper {	
@@ -182,9 +174,8 @@ body {
 }
 
 .details-body-description {
-	font-size: 16px;
-	/* margin: 0 auto; */
-	/* width : 90%; */
+	font-size: 12px;
+	margin-left: 3%;
 }
 
 .header div{ 

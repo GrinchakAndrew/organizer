@@ -11,13 +11,13 @@
     </span>
 </div>
 <div onclick="" style="background-color: #dfe8f8; border: 1px solid #6690BC; color: white; margin-left: auto; margin-right: auto; text-align: center; width: 100%;">
-    <span style="color: #333399;"><span style="color: #333399; font-size: 16px; font-variant: small-caps;"><a href="javascript:void(0)" style="font-size: 16px; font-variant: small-caps;">
+    <span style="color: #333399;"><span style="color: #333399; font-size: 16px; font-variant: small-caps;"><a href="javascript:void(0)" style="font-size: 12px; font-variant: small-caps;">
 Russian Modern Slang and English Equivalents
 </a></span></span>
 </div>
 <div style="border: 1px solid #6690BC; margin-left: auto; margin-right: auto; text-align: center; width: 100%;">
-    <span style="font-size: 17.33333396911621px; font-variant: small-caps; line-height: 30px;"></span>
-    <a href=""></a><span style="color: #6690bc; font-size: 17px; font-variant: small-caps; line-height: 30px; text-align: center;"></span>
+    <span style="font-size: 12px; font-variant: small-caps; line-height: 30px;"></span>
+    <a href=""></a><span style="color: #6690bc; font-size: 12px; font-variant: small-caps; line-height: 30px; text-align: center;"></span>
     <br />
     <table style="border: 1px solid #DFE8F8; margin: 0 auto; width: 94%;">
         <tbody>
