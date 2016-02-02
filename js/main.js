@@ -1175,8 +1175,8 @@ $('document').ready(function () {
 						$('.left-right-container').before($('.red-lining'));
 						$('#myDiv').css({'position' : 'static'});
 					/*-----------------------*/
-					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
+					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$('.tabulator-wrapper').remove();
 					$('.scrolling-right').remove();
 					$('.scrolling-left').remove();
