@@ -1091,6 +1091,7 @@ $('document').ready(function () {
             tabsNames = [];
             $('body').trigger('title-change');
 			$('.columniser-text').eq(0).css('display', '');
+			$('.columniser').prepend($('.scrolling-left'));
 			$('.details-body-code') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] ? $('.details-body-code') [0]['innerText' in $('.details-body-entrails') [0] ? 'innerText' : 'innerHTML'] = '' : null;
 			$('.details-body-description') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] ? $('.details-body-description') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] = '' : null;
             if (e.target.tagName === 'DIV') {
