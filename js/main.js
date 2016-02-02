@@ -1088,6 +1088,7 @@ $('document').ready(function () {
 			accordeon.scroller();
         $('.title').on(eventName, function (e) {
             'use strict';
+			$('.columniser-text').eq(0).css('visibility', 'visible');
             tabsNames = [];
             $('body').trigger('title-change');
 			$('.details-body-code') [0]['innerText' in $('.details-body-code') [0] ? 'innerText' : 'innerHTML'] ? $('.details-body-code') [0]['innerText' in $('.details-body-entrails') [0] ? 'innerText' : 'innerHTML'] = '' : null;
@@ -1180,6 +1181,7 @@ $('document').ready(function () {
 					$('.tabulator-wrapper').remove();
 					$('.scrolling-right').remove();
 					$('.scrolling-left').remove();
+					$(this).css('visibility', 'none');
 			});
 	  }
             if (tabsNumberByKey[text] === 0 || !tabsNumberByKey[text]) {
