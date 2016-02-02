@@ -121,6 +121,7 @@ body {
 
 .scrolling-left {
 	margin-left: -2px;
+	z-index: 1000;
 }
 
 .scrolling-right {

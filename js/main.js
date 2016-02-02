@@ -572,8 +572,9 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 					$('.tabulator-ul').append(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
-                    $('.columniser-text').eq(0).after(this.scrollingLeft.css('z-index', 1000));
-                    this.scrollingLeft.append(this.arrowLeft);
+					$('.columniser-text').eq(0).after(this.scrollingLeft);
+                    $('.header').after($('.columniser-text').eq(0));
+					this.scrollingLeft.append(this.arrowLeft);
                 }
             },
             overFlowIndexCalculate: function () {
@@ -1166,8 +1167,9 @@ $('document').ready(function () {
 				}
 				
 			$('.columniser-text').first().on('mousedown', function(e) {
+					$('.accordeon-wrapper .details-body .details-body-description').html('');
+					$('.accordeon-wrapper .details-body .details-body-code').html('');
 					$('.titles-column-left').css('display', '');
-					$('.details-body').css({'margin-left' : ''});
 					/*restore $('.columniser') to the original state before the scroll:*/
 						$('.left-right-container').before($('.columniser'));
 						$('.left-right-container').before($('.red-lining'));
@@ -1175,10 +1177,6 @@ $('document').ready(function () {
 					/*-----------------------*/
 					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text()));
 					$($('.columniser-text')[1]).remove();
-					$('.columniser .columniser-text:nth-child(1)').css({'width' : '380px'});
-					$('.red-lining').css({'margin-left' : ''});
-					$('.accordeon-wrapper .details-body .details-body-description').html('');
-					$('.accordeon-wrapper .details-body .details-body-code').html('');
 					$('.tabulator-wrapper').remove();
 					$('.scrolling-right').remove();
 					$('.scrolling-left').remove();
