@@ -1150,13 +1150,15 @@ $('document').ready(function () {
                 $('.arrow-left').off(eventName);
                 $('.arrow-right').off(eventName);
                 $('.tabs-li').off(eventName);
-				
-				var booleanToChangeWidthOfRedLineToPercentageOrToContainerWidth = accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text);
-				
-				$('.columniser-text').first().append($('<div></div>', {'style' : 'float: left;', 'class' : 'breadcrumb'}).
+				accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text);
+debugger;				
+				/* $('.columniser-text').first().append($('<div></div>', {'style' : 'float: left;', 'class' : 'breadcrumb'}).
 				append($('<div></div>', {'style' : "background-color : #6690BC; padding-top: 1px; padding-bottom: 1px; height: 17px; border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7; border-right: 1px solid #C7C7C7; padding-left: 5px; padding-right: 5px;font-family: 'Segoe UI'; font-size: 13px; cursor: pointer; color: #fff; float: left;", 'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));
-				$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/^(.*)<div/)[1], ''));
+			 */
+/* 				$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/^(.*)<div/)[1], ''));
+				
 				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; display: inline-block; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
+ */				
 				$('.titles-column-left').css('display', 'none');
 				
 				
