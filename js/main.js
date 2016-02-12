@@ -1151,7 +1151,11 @@ $('document').ready(function () {
                 $('.arrow-right').off(eventName);
                 $('.tabs-li').off(eventName);
 				accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text);
-debugger;				
+				$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).
+				append($('<div></div>', {'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));	
+/* 		
+
+		
 				/* $('.columniser-text').first().append($('<div></div>', {'style' : 'float: left;', 'class' : 'breadcrumb'}).
 				append($('<div></div>', {'style' : "background-color : #6690BC; padding-top: 1px; padding-bottom: 1px; height: 17px; border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7; border-right: 1px solid #C7C7C7; padding-left: 5px; padding-right: 5px;font-family: 'Segoe UI'; font-size: 13px; cursor: pointer; color: #fff; float: left;", 'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));
 			 */
