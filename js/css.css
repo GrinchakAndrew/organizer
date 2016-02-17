@@ -207,6 +207,23 @@ body {
 	text-align: center;	
 }
 
+.arrow-head {
+	float: left; 
+	display: inline-block; 
+	width: 0; 
+	height: 0; 
+	border-top-width: 10px; 
+	border-top-style: solid; 
+	border-top-color: rgba(0, 0, 0, 0); 
+	border-bottom-width: 10px; 
+	border-bottom-style: solid; 
+	border-bottom-color: rgba(0, 0, 0, 0); 
+	border-right-width: 10px; 
+	border-right-style: solid; 
+	border-right-color: #6690BC;'	
+}
+
+
 .subparentarrowright {
 	width: 0;
 	height: 0;

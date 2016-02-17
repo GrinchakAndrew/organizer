@@ -1154,9 +1154,9 @@ $('document').ready(function () {
 				
 				if(!$('.breadcrumb').length){
 					$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));		
+					$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
 				}
 				$('.columniser-text').eq(1).html($('.columniser-text').eq(1).html().replace($('.columniser-text').eq(1).html().match(/(\w*)(?=<div)/)[0], ''));
-				$('.columniser-text:first').prepend($('<div></div>', {'style' : 'float: left; display: inline-block; width: 0; height: 0; border-top-width: 10px; border-top-style: solid; border-top-color: rgba(0, 0, 0, 0); border-bottom-width: 10px; border-bottom-style: solid; border-bottom-color: rgba(0, 0, 0, 0); border-right-width: 10px; border-right-style: solid; border-right-color: #6690BC;'}));
 				$('.titles-column-left').css('display', 'none');
 				
 				if(document.documentElement.clientWidth < 400) {
