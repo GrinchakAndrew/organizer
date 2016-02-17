@@ -1152,10 +1152,10 @@ $('document').ready(function () {
                 $('.tabs-li').off(eventName);
 				accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text);
 				
-				if(!$('.breadcrumb').length){
+				if($('.breadcrumb').length){
+					$('.breadcrumb').remove();
+				}
 				$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));	
-				}		
-				
 				$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/(\w*)(?=<div)/)[0], ''));
 
 /* 						
