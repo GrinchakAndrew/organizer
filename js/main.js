@@ -1180,7 +1180,7 @@ $('document').ready(function () {
 						$('#myDiv').css({'position' : 'static'});
 					/*-----------------------*/
 					$($('.columniser-text')[1]).remove();
-					/* $('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div').text())); */
+					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div[class="arrowshaft"]').text()));				
 					$('.tabulator-wrapper').remove();
 					$('.scrolling-right').remove();
 					$('.scrolling-left').remove();
