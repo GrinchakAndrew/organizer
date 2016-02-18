@@ -1166,11 +1166,13 @@ $('document').ready(function () {
 				if(accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text)){
 					$('.columniser').css('text-align', "left");	
 					$('.columniser-text[style*="text-align"]').css('text-align','');
+					if(!$('.breadcrumb').length){
+						$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text(txt)));
+						$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
+					}
 				}
-				if(!$('.breadcrumb').length){
-					$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text(txt)));
-					$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
-				}
+				
+				
 				if($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)){
 					$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)[0], ''));	
 				}
