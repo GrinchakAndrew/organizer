@@ -44,7 +44,7 @@ body >.columniser-text{
 	font-size: 12px;
 }
 .accordeon-wrapper {
-	margin: 15px 15px 0 0;
+	margin: 15px 15px 0 15px;
 }
 	.columniser .columniser-text {
 		font-family: 'Segoe UI';
