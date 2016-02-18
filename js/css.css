@@ -2,6 +2,10 @@ body {
 	margin: 0;
 }
 
+body >.columniser-text{
+	margin: .3% 2.5%;
+}
+
 .breadcrumb {
 	float: left;
 }
@@ -47,8 +51,8 @@ body {
 		vertical-align: middle;
 	}
 		.columniser .columniser-text:nth-child(1){
-			width: 334px;
-			text-align: center;
+			width: 255px;
+			margin-left: 3%;
 		}
 		.columniser .columniser-text:nth-child(2){
 			width: 66.875%;
@@ -116,12 +120,12 @@ body {
 }
 @media only screen  and (min-width : 1224px) {
 	.tabulator-wrapper {	
-		 width: 300px; 
-		 padding-left: 10px;
+		 width: 300px;
 	}
 }
 .columniser {
 		width: 100%;
+		text-align: center;
 	}
 .header {
 		width: 100%;	
@@ -129,7 +133,6 @@ body {
 
 .tabulator-wrapper {	
 	overflow: hidden;
-	padding-left: 10px;
 	width: 300px; 
 }
 
@@ -142,7 +145,7 @@ body {
 }
 
 .scrolling-left {
-	margin-left: -2px;
+	margin-left: -12px;
 	z-index: 1000;
 }
 
@@ -257,7 +260,6 @@ body {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 		.tabulator-wrapper {	
 			width: 300px;
-			padding-left: 10px;
 	}
 }
 
@@ -265,7 +267,6 @@ body {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 		.tabulator-wrapper {
 			width: 300px;
-			padding-left: 10px;
 	}
 }
 

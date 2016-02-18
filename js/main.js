@@ -568,11 +568,11 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 })
             },
             scrollingArrows: function () {
-                if (!$('.scrolling-right').length) {                    
+                if (!$('.scrolling-right').length) {
 					$('.tabulator-ul').append(this.scrollingRight.append(this.arrowRight));
                 }
                 if (!$('.scrolling-left').length) {
-					$('.columniser-text').eq(0).after(this.scrollingLeft);
+					$('.tabulator-wrapper .tabulator-ul li').eq(0).before(this.scrollingLeft);
                     $('.header').after($('.columniser-text').eq(0));
 					this.scrollingLeft.append(this.arrowLeft);
                 }
@@ -756,6 +756,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
+							el.css('margin-left', '-15px');
                     });
                     $('.scrolling-right').on('touchstart', function () {
                         var el = $(this.firstChild);
@@ -769,12 +770,14 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 							el.css('border-top', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-bottom', '25px solid rgba(0, 0, 0, 0)');
 							el.css('border-right', '25px solid #C51F00');
+							el.css('margin-left', '-15px');
                     });
                     $('.scrolling-left').on('mouseleave', function () {
                         var el = $(this.firstChild);
                         el.css('border-top', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-bottom', '10px solid rgba(0, 0, 0, 0)');
                         el.css('border-right', '10px solid #C51F00');
+						el.css('margin-left', '');
                     });
                     $('.scrolling-right').on('mouseover', function () {
                         var el = $(this.firstChild);
@@ -872,7 +875,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             }
         };
 		elements.fn(elements.rightClickFn, elements.leftClickFn, elements.tabsClickAndPostingCall);
-		return elements.arrOverflowingTabsWidth;
+		return true;
 }
 
 function POST(url) {
@@ -1089,6 +1092,7 @@ $('document').ready(function () {
         $('.title').on(eventName, function (e) {
             'use strict';
             tabsNames = [];
+			
             $('body').trigger('title-change');
 			$('.columniser-text').eq(0).css('display', '');
 			$('.columniser').prepend($('.scrolling-left'));
@@ -1150,13 +1154,26 @@ $('document').ready(function () {
                 $('.arrow-left').off(eventName);
                 $('.arrow-right').off(eventName);
                 $('.tabs-li').off(eventName);
-				accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text);
-				
+				var txt;
+				if($('.arrowshaft').length){
+					txt = $('.arrowshaft').text();
+					$('.columniser-text').eq(1).html('')
+					$('.columniser-text').eq(0).html('');
+				}else{
+					txt = $('.columniser-text').eq(0).html();	
+					$('.columniser-text').eq(0).html('');
+				}
+				if(accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text)){
+					$('.columniser').css('text-align', "left");	
+					$('.columniser-text[style*="text-align"]').css('text-align','');
+				}
 				if(!$('.breadcrumb').length){
-					$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text($('.columniser-text').first().text())));		
+					$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text(txt)));
 					$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
 				}
-				$('.columniser-text').eq(1).html($('.columniser-text').eq(1).html().replace($('.columniser-text').eq(1).html().match(/(\w*)(?=<div)/)[0], ''));
+				if($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)){
+					$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)[0], ''));	
+				}
 				$('.titles-column-left').css('display', 'none');
 				
 				if(document.documentElement.clientWidth < 400) {
@@ -1177,7 +1194,7 @@ $('document').ready(function () {
 						$('#myDiv').css({'position' : 'static'});
 					/*-----------------------*/
 					$($('.columniser-text')[1]).remove();
-					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text'}).text($('.columniser-text:first div[class="arrowshaft"]').text()));				
+					$('.columniser').prepend($('<div></div>', {'class' : 'columniser-text' , "style" : "text-align: center;"}).text($('.columniser-text:first .arrowshaft').text()));
 					$('.tabulator-wrapper').remove();
 					$('.scrolling-right').remove();
 					$('.scrolling-left').remove();
