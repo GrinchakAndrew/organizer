@@ -1178,7 +1178,7 @@ $('document').ready(function () {
 				
 				if(document.documentElement.clientWidth < 400) {
 					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
-					$('.tabulator-wrapper').css({'overflow' : 'visible', 'width' : $('.tabs-li').first().outerWidth() + 'px'});
+					$('.tabulator-wrapper').css({/* 'overflow' : 'visible' ,*/ 'width' : $('.tabs-li').first().outerWidth() + 'px'});
 					
 				}else {
 					$('.scrolling-right').css({'left' : ''});
