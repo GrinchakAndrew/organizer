@@ -1092,7 +1092,6 @@ $('document').ready(function () {
         $('.title').on(eventName, function (e) {
             'use strict';
             tabsNames = [];
-			
             $('body').trigger('title-change');
 			$('.columniser-text').eq(0).css('display', '');
 			$('.columniser').prepend($('.scrolling-left'));
@@ -1170,10 +1169,9 @@ $('document').ready(function () {
 						$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text(txt)));
 						$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
 					}
-				}else{
+				} else {
 					$('.columniser-text').first().css('display', 'none');
 				}
-				
 				
 				if($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)){
 					$('.columniser-text').first().html($('.columniser-text').first().html().replace($('.columniser-text').first().html().match(/[^>](\w*)(?=<div)/g)[0], ''));	
@@ -1184,8 +1182,6 @@ $('document').ready(function () {
 					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
 					$('.tabulator-wrapper').css({/* 'overflow' : 'visible' ,*/ 'width' : $('.tabs-li').first().outerWidth() + 'px'});
 					
-				}else {
-					$('.scrolling-right').css({'left' : ''});
 				}
 				
 			$('.columniser-text').first().on('mousedown', function(e) {
@@ -1204,6 +1200,8 @@ $('document').ready(function () {
 					$('.scrolling-left').remove();
 					$(this).css('display', 'none');
 			});
+	  }else{
+		  $('.columniser-text').first().css('display', 'none');
 	  }
             if (tabsNumberByKey[text] === 0 || !tabsNumberByKey[text]) {
                 $('.tabulator-wrapper').remove();
