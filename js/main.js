@@ -1170,6 +1170,8 @@ $('document').ready(function () {
 						$('.columniser-text').first().append($('<div></div>', {'class' : 'breadcrumb'}).append($('<div></div>', {'class' : 'arrowshaft'}).text(txt)));
 						$('.columniser-text:first').prepend($('<div></div>', {'class' : 'arrow-head'}));	
 					}
+				}else{
+					$('.columniser-text').first().css('display', 'none');
 				}
 				
 				
