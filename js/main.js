@@ -1187,7 +1187,7 @@ $('document').ready(function () {
 				$('.titles-column-left').css('display', 'none');
 				
 				if(document.documentElement.clientWidth < 400) {
-					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '1px solid #C51F00'});
+					// $('.tabs-li .tabulator-div').last().css({'border-bottom' : '1px solid #C51F00'});
 					$('.tabulator-wrapper').css({/* 'overflow' : 'visible' ,*/ 'width' : $('.tabs-li').first().outerWidth() + 'px'});
 					
 				}
