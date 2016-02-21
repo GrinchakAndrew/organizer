@@ -1,5 +1,5 @@
 ﻿{
-	"Miscellany: FED | Backend" : [
+	"Miscellany: FED, Backend" : [
 			{"Front-end:" : [ 
 							{"Patterns" : [
 									{"Promise" : {"(1) Promise Pattern" : "data/promise_reworkedCode.txt"}},

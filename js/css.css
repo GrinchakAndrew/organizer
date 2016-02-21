@@ -186,6 +186,10 @@ body >.columniser-text{
 	
 }
 
+.tabs-li .tabulator-div span[style]{
+	white-space: nowrap;
+}
+
 .subParent .title:not(:first-child) span {
 	margin-left : 10px !important;
 }
