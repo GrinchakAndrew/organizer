@@ -3,7 +3,7 @@ body {
 }
 
 body >.columniser-text{
-	margin: .3% 2.5%;
+	margin: .3% 2.5% 23px;
 }
 
 .breadcrumb {
