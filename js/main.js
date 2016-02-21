@@ -877,7 +877,8 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             }
         };
 		elements.fn(elements.rightClickFn, elements.leftClickFn, elements.tabsClickAndPostingCall);
-		$('.columniser-text').eq(1).css('display', 'inline-block');
+		// $('.columniser-text').eq(1).css('display', 'inline-block');
+		$('.columniser-text').eq(1).css('display', 'block');
 		return true;
 }
 
@@ -1186,7 +1187,7 @@ $('document').ready(function () {
 				$('.titles-column-left').css('display', 'none');
 				
 				if(document.documentElement.clientWidth < 400) {
-					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '2px solid #C51F00'});
+					$('.tabs-li .tabulator-div').last().css({'border-bottom' : '1px solid #C51F00'});
 					$('.tabulator-wrapper').css({/* 'overflow' : 'visible' ,*/ 'width' : $('.tabs-li').first().outerWidth() + 'px'});
 					
 				}
