@@ -1,5 +1,5 @@
 ﻿{
-	"Miscellany: Front-end" : [
+	"Miscellany: FED | Backend" : [
 			{"Front-end:" : [ 
 							{"Patterns" : [
 									{"Promise" : {"(1) Promise Pattern" : "data/promise_reworkedCode.txt"}},
@@ -11,10 +11,6 @@
 									{"Scrollable Menu Solution" : {"(1) Scrollable Menu Solution" : "data/scrollable_menu_nuances_Code.js"}}
 								]
 							}, 
-							{"CSS" : [
-									{"_HTMl" : {"(1) SomeHTML" : ""}}
-								]
-							}, 
 							{"Selenium" : [
 									{"Iterate Thru WebEls List" : {"(1) WebEls List Iter" : "data/Selenium_Iterate_through_List_webEls_Code.txt"}}
 								]
@@ -23,25 +19,6 @@
 			}
 		], 
 		
-	"Miscellany: Back-end" : [
-		{"Back-end:" : [
-							{"Patterns" : [
-									{"Promise" : {"(1) Promise Pattern" : ""}},
-									{"SomeOtherPattern"	: {"(1) _SomeOtherPattern" : ""}}
-								]
-							}, 
-							{"HTML" : [
-									{"_HTMl" : {"(1) SomeHTML" : ""}}
-								]
-							}, 
-							{"CSS" : [
-									{"_HTMl" : {"(1) SomeHTML" : ""}}
-								]
-							}
-				]
-		}
-	], 
-	
 	"English" : [
 		{"Thesaurus:" : [
 							{"Russian Slang into English" : [

@@ -451,6 +451,8 @@ Accordeon.prototype.build = function (taskNames) {
 							$('.collapsible').text('[Uncollapse]').trigger('makeCollapsibleVisibleAgain');
 							_t.scrollingForAnimatedColumnView();
 					 } else if($('.collapsible').text() === '[Uncollapse]') {
+						 /*add the exceptions acc. to the text of the .titles*/
+						 
 						$('.subParent .subparentarrowdownward').closest('.subParent .title').each(function(){$(this).trigger('click')});
 							$(this).css('display', 'none');
 							$('.collapsible').text('[Expand]').trigger('makeCollapsibleVisibleAgain');
@@ -1103,7 +1105,7 @@ $('document').ready(function () {
                     $(e.target).prepend($('<div>', {
                         id: 'clickableTitleArrow',
                         html: '&#10147;',
-                        style: 'display : inline; margin-left: 9%; font-size: 17px;'
+                        style: 'display : inline; font-size: 17px;'
                     }));
 					$('#clickableTitleArrow').parent().css('color', '#fff');
 					$('#clickableTitleArrow').parent().css('background-color', '#C51F00');
@@ -1114,7 +1116,7 @@ $('document').ready(function () {
                     $(e.target.parentNode).prepend($('<div>', {
                         id: 'clickableTitleArrow',
                         html: '&#10147;',
-                        style: 'display : inline; margin-left: 5%; font-size: 17px;'
+                        style: 'display : inline; font-size: 17px;'
                     }));
 					$('#clickableTitleArrow').parent().css('color', '#fff');
 					$('#clickableTitleArrow').parent().css('background-color', '#C51F00');
@@ -1162,6 +1164,7 @@ $('document').ready(function () {
 					txt = $('.columniser-text').eq(0).html();	
 					$('.columniser-text').eq(0).html('');
 				}
+				
 				if(accordeon.tabulator(tabsNumberByKey[text], tabsNames, jsonObject, text)){
 					$('.columniser').css('text-align', "left");	
 					$('.columniser-text[style*="text-align"]').css('text-align','');
@@ -1201,7 +1204,7 @@ $('document').ready(function () {
 					$(this).css('display', 'none');
 			});
 	  }else{
-		  $('.columniser-text').first().css('display', 'none');
+		  // $('.columniser-text').first().css('display', 'none');
 	  }
             if (tabsNumberByKey[text] === 0 || !tabsNumberByKey[text]) {
                 $('.tabulator-wrapper').remove();
