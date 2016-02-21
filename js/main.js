@@ -877,7 +877,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             }
         };
 		elements.fn(elements.rightClickFn, elements.leftClickFn, elements.tabsClickAndPostingCall);
-		$('.columniser-text').eq(1).css('display', 'block')
+		$('.columniser-text').eq(1).css('display', 'inline-block');
 		return true;
 }
 
