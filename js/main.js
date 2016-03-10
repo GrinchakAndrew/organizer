@@ -554,15 +554,28 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             buildTabs: function () {
                 $('.columniser-text').eq(1).append(this.wrapper);
                 this.wrapper.append(this.ul);
+				String.prototype.width = function(font) {
+					  var f = font || '12px arial',
+						  o = $('<div>' + this + '</div>')
+								.css({'position': 'absolute', 'float': 'left', 'white-space': 'nowrap', 'visibility': 'hidden', 'font': f})
+								.appendTo($('body')),
+						  w = o.width();
+
+					  o.remove();
+
+					  return w;
+				}
+				
                 while (this._i--) {
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
-                    this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
-					
+					var text = $('.tabulator-div').last().text();
+                    this.tabsOverallWidth += text.width();
                     if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                         this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
                         this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth();
                     }
                 }
+				
                 $(this.arrOverflowingTabs).each(function () {
                     $(this).css('display', 'none');
                 })
