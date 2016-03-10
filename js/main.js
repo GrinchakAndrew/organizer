@@ -451,8 +451,6 @@ Accordeon.prototype.build = function (taskNames) {
 							$('.collapsible').text('[Uncollapse]').trigger('makeCollapsibleVisibleAgain');
 							_t.scrollingForAnimatedColumnView();
 					 } else if($('.collapsible').text() === '[Uncollapse]') {
-						 /*add the exceptions acc. to the text of the .titles*/
-						 
 						$('.subParent .subparentarrowdownward').closest('.subParent .title').each(function(){$(this).trigger('click')});
 							$(this).css('display', 'none');
 							$('.collapsible').text('[Expand]').trigger('makeCollapsibleVisibleAgain');
@@ -559,12 +557,13 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 while (this._i--) {
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
                     this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
-
-                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
+                }
+				
+				if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                         this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
                         this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth();
                     }
-                }
+				
                 $(this.arrOverflowingTabs).each(function () {
                     $(this).css('display', 'none');
                 })
