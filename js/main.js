@@ -556,14 +556,14 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                 this.wrapper.append(this.ul);
                 while (this._i--) {
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
-                    this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
-
-                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth() || $('.tabulator-div').last().text().match(/\w+/g).length > 2) {
+                    this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth()); 
+                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                         this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
                         this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth();
                     }
                 }
-                $(this.arrOverflowingTabs).each(function () {
+                
+				$(this.arrOverflowingTabs).each(function () {
                     $(this).css('display', 'none');
                 })
             },
