@@ -554,23 +554,18 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
             buildTabs: function () {
                 $('.columniser-text').eq(1).append(this.wrapper);
                 this.wrapper.append(this.ul);
-				if(this._i > 1){
-					while (this._i--) {
+                while (this._i--) {
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
-					if(this._i !== 0){
-						this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
-					}
-                    /* this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
-						if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
+                    this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
+					
+                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
                         this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
-                        this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth(); 
-						}
-					*/
-					}	
-					$(this.arrOverflowingTabs).each(function () {
-						$(this).css('display', 'none');
-					})
-				}
+                        this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth();
+                    }
+                }
+                $(this.arrOverflowingTabs).each(function () {
+                    $(this).css('display', 'none');
+                })
             },
             scrollingArrows: function () {
                 if (!$('.scrolling-right').length) {
