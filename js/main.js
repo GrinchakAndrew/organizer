@@ -558,7 +558,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
                     this.tabsOverallWidth += ($('.tabulator-div').last().outerWidth());
 
-                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth()) {
+                    if (this.tabsOverallWidth > $('.tabulator-wrapper').outerWidth() || $('.tabulator-div').last().text().match(/\w+/g).length > 2) {
                         this.arrOverflowingTabs.push($('.tabulator-div').last()[0]);
                         this.arrOverflowingTabsWidth += $('.tabulator-div').last().outerWidth();
                     }
