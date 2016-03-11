@@ -17,30 +17,7 @@
 							}
 				]
 			}
-		], 
-		
-	"English" : [
-		{"Thesaurus:" : [
-							{"Russian Slang into English" : [
-									{"Criminal Vocabulary" : {"Thesaurus: Criminal Vocabulary, Russian" : "data/induction_thesaurus_vocabulary_criminal.txt", "Thesaurus: Criminal Vocabulary, Russian_123" : "data/induction_thesaurus_vocabulary_criminal.txt", "Thesaurus: Criminal Vocabulary, Russian_777" : "data/induction_thesaurus_vocabulary_criminal.txt"}
-									}
-								]
-							}
-				]
-		}
-	], 
-	
-	"German" : [
-		{"Thesaurus:" : [
-							{"Deutsche Woerter" : [
-									{"Woerterbuch: 1" : {"1" : "data/induction_german_words1.txt"}}, 
-									{"Woerterbuch : 2" : {"2" : "data/induction_german_words2.txt"}}
-								]
-							}
-				]
-		}
-	], 
-	
+		],
 	"Photo Gallery" : [
 		{"Nice Pics:" : [
 							{"Pics4Fun" : [
@@ -51,7 +28,4 @@
 				]
 		}
 	]
-	
-	
-	
 }

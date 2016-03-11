@@ -565,7 +565,7 @@ Accordeon.prototype.tabulator = function (tabsNum, tabsNames, jsonObject, clicke
 
 					  return w;
 				}
-				
+
                 while (this._i--) {
                     this.ul.append(this.li.clone().append(this.div.clone().append(this.span.clone().text(tabsNames[this._i]))));
 					var text = $('.tabulator-div').last().text();
