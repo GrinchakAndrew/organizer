@@ -9,9 +9,7 @@
             <tbody>
                 <tr>
                     <td colspan="3" style="width: 28px; text-align: center;">
-                        <div>
-							Pigs communicate constantly with one another. 
-						</div>
+                        <div>Pigs communicate constantly with one another.</div>
                     </td>
                 </tr>
             </tbody>
