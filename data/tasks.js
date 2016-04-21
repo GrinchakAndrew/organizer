@@ -14,7 +14,7 @@
 	"Photo Gallery" : [
 		{"Nice Pics of Pigs:" : [
 							{"Pics4Fun" : [
-									{"Piglets" : {" Some Funny Pictures of the Piggies " : "data/Induction_agri_repo_pics_trial.txt"}}
+									{"Piglets" : {"Some Funny Pictures of the Piggies" : "data/Induction_agri_repo_pics_trial.txt"}}
 								]
 							} 
 				]
