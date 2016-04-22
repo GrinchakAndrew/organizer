@@ -51,7 +51,7 @@ Accordeon.prototype.scroller = function () {
           config.redLiningCalculatedWidth += $(this).outerWidth();
         }
       });
-      $('.header').first().css('background-color', '#FFF');	
+      /* $('.header').first().css('background-color', '#FFF');	 */
 		$('#myDiv').css({
         'position': 'fixed'
       });
@@ -63,7 +63,7 @@ Accordeon.prototype.scroller = function () {
       config.redLining.css({
         'margin': ''
       });
-      $('.header').first().css({'background-color' : '#F0F0F0', 'top' : '0px'});
+      $('.header').first().css({/* 'background-color' : '#F0F0F0',  */'top' : '0px'});
 	  $('#myDiv').css({
         'position': 'static'
       });
